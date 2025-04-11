@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('fonts/Lordish.ttf') format('truetype');
+  }
+  
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+header {
+    font-family: 'Lordish', sans-serif;
+    background-color: #ff5733;
+    color: white;
+    padding: 20px;
+    font-size: 60px;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+.menu-item {
+    background: white;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
