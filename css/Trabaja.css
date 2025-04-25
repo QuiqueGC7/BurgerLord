@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'Lordish';
+    src: url('./Font/Lordish-Regular.ttf') format('truetype'),
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+/* Header styles */
+header {
+    background-color: #ff8b33;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+}
+header h4 {
+    font-family: 'Lordish';
+    padding: 20px;
+    font-size: 50px;
+    line-height: 0;
+}
+nav {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    font-size: clamp(25px, 30px, 35px);
+    justify-content: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    margin-right: 90px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2rem;
+    }
+    nav a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Form container styles */
+.form-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
