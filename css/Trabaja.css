@@ -18,7 +18,7 @@ header {
     box-sizing: border-box;
     font-size: 50px;
 }
-header h4 {
+.titulo {
     font-family: 'Lordish';
     padding: 20px;
     font-size: 50px;
@@ -55,54 +55,95 @@ nav a {
     }
 }
 
-/* Form container styles */
+/* Form container styles - versión más formal */
 .form-container {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 40px auto;
+    border: 1px solid #e0e0e0;
 }
 
 .form-container h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    border-bottom: 2px solid #ff8b33;
+    padding-bottom: 10px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 22px;
+    text-align: left;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 0.95rem;
 }
 
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #ff8b33;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 139, 51, 0.2);
 }
 
 .form-group textarea {
-    resize: none;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 35px;
 }
 
 .form-group button {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 14px;
+    background-color: #ff8b33;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-size: 1rem;
-    cursor: pointer;
+
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.form-group button:hover {
-    background-color: #0056b3;
-}
+/* Estilos responsivos para móviles */
+@media (max-width: 850px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
