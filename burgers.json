@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "nombre": "Hamburguesa Clásica",
+      "descripcion": "Deliciosa hamburguesa con carne de ternera, lechuga, tomate y queso cheddar.",
+      "precio": 5.99,
+      "imagen": "./Images/Clásica.png",
+      "categoria": "Clasicas"
+    },
+    {
+      "id": 2,
+      "nombre": "Hamburguesa BBQ",
+      "descripcion": "Jugosa hamburguesa con salsa BBQ, aros de cebolla y bacon crujiente.",
+      "precio": 6.99,
+      "imagen": "./Images/BBQ.png",
+      "categoria": "Clasicas"
+    }
+    
+  ]
+  
