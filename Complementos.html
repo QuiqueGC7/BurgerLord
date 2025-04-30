@@ -20,96 +20,37 @@
             </ul>
         </nav>
     </header>
-    <section class='menu'>
+    <section class="menu" id="menu-container"></section>
 
-        <section class="categoria">Patatas</section>
-        <div class="menu-item">
-            <img src="./Images/PatatasFritas.png" alt="Patatas Fritas" id="15">
-            <h3>Patatas Fritas</h3>
-            <p>Unas patatas fritas combinan con todo</p>
-            <strong>$1.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/PatatasDeluxe.png" alt="Patatas Deluxe" id="16">
-            <h3>Patatas Deluxe</h3>
-            <p>Patatas Deluxe</p>
-            <strong>$1.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/PatatasB&Q.png" alt="PatatasB&Q" id="17">
-            <h3>PatatasB&Q</h3>
-            <p>Deliciosas patatas con queso fundido y trozos de bacon</p>
-            <strong>$1.95</strong>
-        </div>
+  <footer>
+    &copy; 2025 Hamburguesería BurgerLord - ¡Saborea la diferencia de verdad, no el rey de las excusas! 🍔🔥
+  </footer>
 
-        <section class="categoria">Bebidas</section>
-        <div class="menu-item">
-            <img src="./Images/FantaLimon.png" alt="Fanta Limon" id="18">
-            <h3>Fanta de limon</h3>
-            <p>Una fanta de limon fresquita</p>
-            <strong>$2.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/FantaN.png" alt="Fanta Naranja" id="19">
-            <h3>Fanta de naranja</h3>
-            <p>Una fanta de naranja fresquita</p>
-            <strong>$2.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/CocaCola.png" alt="CocaCola" id="20">
-            <h3>CocaCola</h3>
-            <p>Coca con cola</p>
-            <strong>$2.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/Lipton.png" alt="Lipton" id="18">
-            <h3>Lipton</h3>
-            <p>Un buen te de limon nunca biene mal</p>
-            <strong>$2.49</strong>
-        </div>
-
-        <section class="categoria">Batidos</section>
-        <div class="menu-item">
-            <img src="./Images/BatidoChocolate.png" alt="Batido Chocolate" id="15">
-            <h3>Batido de Chocolate</h3>
-            <p>Cremoso, frío y perfecto para acompañar cualquier burger.</p>
-            <strong>$3.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/BatidoFresa.png" alt="Batido Fresa" id="16">
-            <h3>Batido de Fresa</h3>
-            <p>Cremoso, frío y perfecto para acompañar cualquier burger.</p>
-            <strong>$3.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/BatidoVainilla.png" alt="Batido Vainilla" id="15">
-            <h3>Batido de Vainilla</h3>
-            <p>Cremoso, frío y perfecto para acompañar cualquier burger.</p>
-            <strong>$3.49</strong>
-        </div>
-
-        <section class="categoria">Helados</section>
-        <div class="menu-item">
-            <img src="./Images/HeladoChocolate.png" alt="Helado Chocolate" id="15">
-            <h3>Helado de Chocolate</h3>
-            <p>Un clasico entre clasicos</p>
-            <strong>$3.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/GelatoFresa.png" alt="Helado Fresa" id="16">
-            <h3>Helado de Fresa</h3>
-            <p>Es rosa y sabe y a fresa</p>
-            <strong>$3.49</strong>
-        </div>
-        <div class="menu-item">
-            <img src="./Images/GelatoVainilla.png" alt="Helado Vainilla" id="15">
-            <h3>Helado de Vainilla</h3>
-            <p>Da igual que sea simple si esta buenisimo</p>
-            <strong>$3.49</strong>
-        </div>
-    </section>
-    <footer>
-        &copy; 2025 Hamburguesería BurgerLord - ¡Saborea la diferencia de verdad, no el rey de las excusas! 🍔🔥
-    </footer>
+  <!-- Script al final del body -->
+  <script>
+    fetch('./complementos.json')
+      .then(res => {
+        if (!res.ok) throw new Error("Error de red");
+        return res.json();
+      })
+      .then(data => {
+        const container = document.getElementById('menu-container');
+        let currentCategory = '';
+        data.forEach(item => {
+          if (item.categoria !== currentCategory) {
+            currentCategory = item.categoria;
+            container.innerHTML += `<section class="categoria">Hamburguesas ${currentCategory}</section>`;
+          }
+          container.innerHTML += `
+            <div class="menu-item">
+              <img src="${item.imagen}" alt="${item.nombre}" id="${item.id}">
+              <h3>${item.nombre}</h3>
+              <p>${item.descripcion}</p>
+              <strong>$${item.precio.toFixed(2)}</strong>
+            </div>`;
+        });
+      })
+      .catch(err => console.error("Error al cargar el menú:", err));
+  </script>
 </body>
 </html>

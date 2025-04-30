@@ -1,0 +1,107 @@
+[
+    {
+      "id": 15,
+      "nombre": "Patatas Fritas",
+      "descripcion": "Unas patatas fritas combinan con todo",
+      "precio": 1.49,
+      "imagen": "./Images/PatatasFritas.png",
+      "categoria": "Patatas"
+    },
+    {
+      "id": 16,
+      "nombre": "Patatas Deluxe",
+      "descripcion": "Patatas Deluxe",
+      "precio": 1.49,
+      "imagen": "./Images/PatatasDeluxe.png",
+      "categoria": "Patatas"
+    },
+    {
+      "id": 17,
+      "nombre": "PatatasB&Q",
+      "descripcion": "Deliciosas patatas con queso fundido y trozos de bacon",
+      "precio": 1.95,
+      "imagen": "./Images/PatatasB&Q.png",
+      "categoria": "Patatas"
+    },
+    {
+      "id": 18,
+      "nombre": "Fanta de limón",
+      "descripcion": "Una fanta de limon fresquita",
+      "precio": 2.49,
+      "imagen": "./Images/FantaLimon.png",
+      "categoria": "Bebidas"
+    },
+    {
+      "id": 19,
+      "nombre": "Fanta de naranja",
+      "descripcion": "Una fanta de naranja fresquita",
+      "precio": 2.49,
+      "imagen": "./Images/FantaN.png",
+      "categoria": "Bebidas"
+    },
+    {
+      "id": 20,
+      "nombre": "CocaCola",
+      "descripcion": "Coca con cola",
+      "precio": 2.49,
+      "imagen": "./Images/CocaCola.png",
+      "categoria": "Bebidas"
+    },
+    {
+      "id": 21,
+      "nombre": "Lipton",
+      "descripcion": "Un buen te de limon nunca biene mal",
+      "precio": 2.49,
+      "imagen": "./Images/Lipton.png",
+      "categoria": "Bebidas"
+    },
+    {
+      "id": 22,
+      "nombre": "Batido de Chocolate",
+      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger.",
+      "precio": 3.49,
+      "imagen": "./Images/BatidoChocolate.png",
+      "categoria": "Batidos"
+    },
+    {
+      "id": 23,
+      "nombre": "Batido de Fresa",
+      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger.",
+      "precio": 3.49,
+      "imagen": "./Images/BatidoFresa.png",
+      "categoria": "Batidos"
+    },
+    {
+      "id": 24,
+      "nombre": "Batido de Vainilla",
+      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger.",
+      "precio": 3.49,
+      "imagen": "./Images/BatidoVainilla.png",
+      "categoria": "Batidos"
+    },
+    {
+      "id": 25,
+      "nombre": "Helado de Chocolate",
+      "descripcion": "Un clasico entre clasicos",
+      "precio": 3.49,
+      "imagen": "./Images/HeladoChocolate.png",
+      "categoria": "Helados"
+    },
+    {
+      "id": 26,
+      "nombre": "Helado de Fresa",
+      "descripcion": "Es rosa y sabe y a fresa",
+      "precio": 3.49,
+      "imagen": "./Images/GelatoFresa.png",
+      "categoria": "Helados"
+    },
+    {
+      "id": 27,
+      "nombre": "Helado de Vainilla",
+      "descripcion": "Da igual que sea simple si esta buenisimo",
+      "precio": 3.49,
+      "imagen": "./Images/GelatoVainilla.png",
+      "categoria": "Helados"
+    }
+  ]
+  
