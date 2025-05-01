@@ -6,6 +6,7 @@
     <title>BurgerLord</title>
     <link rel="stylesheet" href='./css/style.css'>
     <link rel="shortcut icon" href='./Images/Lord2.ico'/>
+    <script src="./js/complementos.js"></script>
 </head>
 <body>
     <header>
@@ -22,35 +23,9 @@
     </header>
     <section class="menu" id="menu-container"></section>
 
-  <footer>
-    &copy; 2025 Hamburguesería BurgerLord - ¡Saborea la diferencia de verdad, no el rey de las excusas! 🍔🔥
-  </footer>
+    <footer>
+      &copy; 2025 Hamburguesería BurgerLord - ¡Saborea la diferencia de verdad, no el rey de las excusas! 🍔🔥
+    </footer>
 
-  <!-- Script al final del body -->
-  <script>
-    fetch('./complementos.json')
-      .then(res => {
-        if (!res.ok) throw new Error("Error de red");
-        return res.json();
-      })
-      .then(data => {
-        const container = document.getElementById('menu-container');
-        let currentCategory = '';
-        data.forEach(item => {
-          if (item.categoria !== currentCategory) {
-            currentCategory = item.categoria;
-            container.innerHTML += `<section class="categoria">Hamburguesas ${currentCategory}</section>`;
-          }
-          container.innerHTML += `
-            <div class="menu-item">
-              <img src="${item.imagen}" alt="${item.nombre}" id="${item.id}">
-              <h3>${item.nombre}</h3>
-              <p>${item.descripcion}</p>
-              <strong>$${item.precio.toFixed(2)}</strong>
-            </div>`;
-        });
-      })
-      .catch(err => console.error("Error al cargar el menú:", err));
-  </script>
 </body>
 </html>
