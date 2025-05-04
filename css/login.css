@@ -1,0 +1,119 @@
+/*Creamos nueva fuente*/
+@font-face {
+    font-family: 'Lordish';
+    src: url('./Font/Lordish-Regular.ttf') format('truetype'),
+}
+/*Cuerpo general de la pagina*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+/*Empieza el header*/
+header {
+    background-color: #ff8b33;
+    color: white;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+}
+.titulo {
+    font-family: 'Lordish';
+    margin: 0 auto; /* Centra el título horizontalmente */
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+    line-height: 0;
+}
+nav {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    font-size: clamp(25px, 30px, 35px);
+    justify-content: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    margin-right: 90px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.login-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 25px;
+    width: 100%;
+    max-width: 360px;
+    text-align: left;
+}
+
+.login-container h2 {
+    color: #ff8b33;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #ff8b33;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #ff8b33;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/*El footer*/
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    position:static;
+    bottom: 0;
+    width: 100%;
+}
