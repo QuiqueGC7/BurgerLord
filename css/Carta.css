@@ -1,0 +1,92 @@
+/*Fuentes nuevas*/
+@font-face {
+    font-family: 'Lordish';
+    src: url('./Font/Lordish-Regular.ttf') format('truetype');
+}
+/*Fin fuentes nuevas*/
+
+/* Estilos generales */
+body {
+    
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #ff8b33;
+    color: white;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.titulo {
+    font-family: 'Lordish';
+    margin: 0 auto; /* Centra el título horizontalmente */
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+    line-height: 1;
+}
+
+/* Estilos de la navegación */
+.menu-principal {
+    background-color: #ffffff;
+    padding: 25px 0;
+    margin: 30px auto;
+    max-width: 80%;
+    border-radius: 10px;
+    
+}
+
+.menu-principal ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-principal li {
+    margin: 20px 0;
+    width: 80%;
+    max-width: 400px;
+}
+
+.menu-principal a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+}
+
+.menu-principal a:hover {
+    background-color: #ff8b33;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Estilos del contenido principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+}

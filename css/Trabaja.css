@@ -45,15 +45,7 @@ nav a {
     text-decoration: none;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header {
-        font-size: 1.2rem;
-    }
-    nav a {
-        font-size: 0.9rem;
-    }
-}
+
 
 /* Form container styles - versión más formal */
 .form-container {

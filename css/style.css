@@ -1,8 +1,11 @@
-/*Creamos nueva fuente*/
+/*Fuentes nuevas*/
 @font-face {
     font-family: 'Lordish';
     src: url('./Font/Lordish-Regular.ttf') format('truetype'),
 }
+/*Fin fuentes nuevas*/
+
+
 /*Cuerpo general de la pagina*/
 body {
     font-family: Arial, sans-serif;
@@ -11,6 +14,10 @@ body {
     text-align: center;
     background-color: #f8f8f8;
 }
+/*Fin del body*/
+
+
+
 /*Empieza el header*/
 header {
     background-color: #ff8b33;
@@ -50,6 +57,8 @@ nav a {
 }
 /* Fin del Header */
 
+
+
 /* Botón de login en la esquina superior derecha */
 .login-button {
     position: absolute;
@@ -62,7 +71,7 @@ nav a {
     color: #ff8b33;
     padding: 10px 20px;
     border-radius: 5px;
-    text-decoration: none;
+    text-decoration: none; /*Texto sin subrayar*/
     font-size: 18px;
     font-weight: bold;
     transition: all 0.3s ease;
@@ -72,6 +81,58 @@ nav a {
     background-color: #ffaa66;
     color: white;
 }
+/*Fin boton login*/
+
+
+
+/*Inicio del carrusel*/
+
+.carrusel-container {
+    max-width: 650px; /*Tamaño del contenedor del carrusel*/
+    margin: 20px auto;
+    position: relative;
+}
+
+.carrusel {
+    display: flex;
+    overflow: hidden; /*Oculta el resto de imagenes*/
+}
+
+.slide {
+    min-width: 100%; /*Ocupa el ancho disponible*/
+    display: none; /*Mostrar la diapositiva que tenga clase active*/
+}
+
+.slide.active {
+    display: block; /*Hace visible la foto*/
+}
+
+.slide img {
+    width: 100%; /*Ocupa el ancho del contenedor disponible*/
+    
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px; /*Pone el boton a 10 px de la izquierda del carrusel*/
+}
+
+.next {
+    right: 10px; /*Pone el boton a 10 px de la derecha del carrusel*/
+}
+
+/*Fin del carrusel*/
 
 
 /*Productos del menu*/
@@ -100,49 +161,11 @@ img {
     width: 100%;
     border-radius: 10px;
 }
-/*El footer*/
-footer {
-    background-color: #222;
-    color: white;
-    padding: 10px;
-    position:static;
-    bottom: 0;
-    width: 100%;
-}
+/*Fin productos menu*/
 
-/* Estilos responsivos para móviles */
-@media (max-width: 850px) {
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    nav li {
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-    .login-button {
-        position: static; /* Quita el posicionamiento absoluto en móviles */
-        margin: 10px auto; /* Centra el botón en móviles */
-        text-align: center;
-        display: block;
-    }
-    .menu {
-        justify-content: space-between;
-      }
-    
-      .menu-item {
-        flex: 0 0 35%; /* Ocupa 35% del ancho, caben 2 */
-        padding: 10px;
-        font-size: 16px; /* Tamaño de texto más pequeño */
-      }
-    
-      .menu-item img {
-        width: 100%;
-      }
-  }
 
-  /* Estilos para el menú de usuario */
+
+/* Estilos para el menú de usuario */
 .user-menu {
     position: relative;
     display: inline-block;
@@ -192,4 +215,52 @@ footer {
 
 .user-menu:hover .dropdown-content {
     display: block;
+}
+/*Fin menu usuario*/
+
+
+
+/*El footer*/
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    position:static;
+    bottom: 0;
+    width: 100%;
+}
+/*Fin footer*/
+
+
+
+/* Estilos responsivos para móviles */
+@media (max-width: 850px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .login-button {
+        position: static; /* Quita el posicionamiento absoluto en móviles */
+        margin: 10px auto; /* Centra el botón en móviles */
+        text-align: center;
+        display: block;
+    }
+    .menu {
+        justify-content: space-between;
+    }
+    
+      .menu-item {
+        flex: 0 0 35%; /* Ocupa 35% del ancho, caben 2 */
+        padding: 10px;
+        font-size: 16px; /* Tamaño de texto más pequeño */
+      }
+    
+      .menu-item img {
+        width: 100%;
+      }
 }
