@@ -8,11 +8,13 @@
 
 /*Cuerpo general de la pagina*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f8f8f8;
+    background-color: #f9f5f0; /* Cambiado a fondo crema */
+    color: #333; /* Color de texto principal */
+    line-height: 1.6;
 }
 /*Fin del body*/
 
@@ -20,41 +22,26 @@ body {
 
 /*Empieza el header*/
 header {
-    background-color: #ff8b33;
+    background-color: #8b2801;
     color: white;
-    position: relative;
-    padding: 20px;
+    padding: 10px 20px; /* Reducido el padding vertical */
     box-sizing: border-box;
-    font-size: 50px;
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    position: relative; /* Mantener posición relativa para el botón de login */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
 .titulo {
     font-family: 'Lordish';
-    margin: 0 auto; /* Centra el título horizontalmente */
     text-align: center;
-    padding: 20px;
+    padding: 15px; /* Reducido el padding */
     font-size: 50px;
-    line-height: 0;
+    line-height: 1; /* Ajustado para evitar espacio extra */
+    margin: 0; /* Eliminar margen automático */
 }
-nav {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-    font-size: clamp(25px, 30px, 35px);
-    justify-content: center;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-nav li {
-    margin-right: 90px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-}
+
 /* Fin del Header */
 
 
@@ -62,24 +49,26 @@ nav a {
 /* Botón de login en la esquina superior derecha */
 .login-button {
     position: absolute;
-    top: 20px;
+    top: 50%; /* Centrar verticalmente */
     right: 20px;
+    transform: translateY(-50%); /* Ajustar la posición vertical */
 }
 
 .btn-login {
-    background-color: white;
-    color: #ff8b33;
-    padding: 10px 20px;
+    background-color: #f3c507;
+    color: #8b2801;
+    padding: 8px 16px; /* Reducido el padding */
     border-radius: 5px;
-    text-decoration: none; /*Texto sin subrayar*/
-    font-size: 18px;
+    text-decoration: none;
+    font-size: 16px; /* Reducido el tamaño de fuente */
     font-weight: bold;
     transition: all 0.3s ease;
+    display: inline-block; /* Asegurar que se comporte como bloque inline */
 }
 
 .btn-login:hover {
-    background-color: #ffaa66;
-    color: white;
+    background-color: #ffda44; /* Amarillo más brillante para hover */
+    color: #8b2801;
 }
 /*Fin boton login*/
 
@@ -116,7 +105,7 @@ nav a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(139, 40, 1, 0.7); /* Cambiado a marrón rojizo semi-transparente */
     color: white;
     border: none;
     padding: 8px 15px;
@@ -154,7 +143,7 @@ nav a {
     width: 100%;
     text-align: left;
     padding: 10px 20px;
-    color: #f48e41;
+    color: #8b2801; /* Cambiado a marrón rojizo */
     font-size: clamp(22px, 3vw, 30px);
   }
 img {
@@ -172,8 +161,8 @@ img {
 }
 
 .user-menu-button {
-    background-color: white;
-    color: #ff8b33;
+    background-color: #f3c507; /* Cambiado a amarillo */
+    color: #8b2801; /* Cambiado a marrón rojizo */
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -209,8 +198,8 @@ img {
 }
 
 .dropdown-content a:hover {
-    background-color: #f5f5f5;
-    color: #ff8b33;
+    background-color: #f9f5f0; /* Cambiado a fondo crema */
+    color: #8b2801; /* Cambiado a marrón rojizo */
 }
 
 .user-menu:hover .dropdown-content {
@@ -219,10 +208,48 @@ img {
 /*Fin menu usuario*/
 
 
+/* Estilos para el banner de trabajo */
+.trabajo-banner {
+    background-color: #ff5100;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    max-width: 800px;
+    color: white;
+}
+
+.trabajo-banner h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.trabajo-banner p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.btn-trabajo {
+    display: inline-block;
+    background-color: white;
+    color: #ff5100;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn-trabajo:hover {
+    background-color: #ffeb3b;
+}
+
+
 
 /*El footer*/
 footer {
-    background-color: #222;
+    background-color: #333; /* Mantenido el gris oscuro */
     color: white;
     padding: 10px;
     position:static;

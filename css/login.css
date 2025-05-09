@@ -5,20 +5,23 @@
 }
 /*Cuerpo general de la pagina*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f8f8f8;
+    background-color: #f9f5f0; /* Cambiado a fondo crema */
+    color: #333; /* Color de texto principal */
+    line-height: 1.6;
 }
 /*Empieza el header*/
 header {
-    background-color: #ff8b33;
+    background-color: #8b2801; /* Cambiado a marrón rojizo */
     color: white;
     position: relative;
     padding: 20px;
     box-sizing: border-box;
     font-size: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 .titulo {
     font-family: 'Lordish';
@@ -64,13 +67,17 @@ main {
     width: 100%;
     max-width: 360px;
     text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h2 {
-    color: #ff8b33;
+    color: #8b2801; /* Cambiado a marrón rojizo */
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f3c507; /* Añadido borde amarillo */
 }
 
 .form-group {
@@ -81,24 +88,27 @@ main {
     display: block;
     font-size: 14px;
     margin-bottom: 5px;
-    color: #333;
+    color: #555; /* Cambiado a gris medio de la paleta */
+    font-weight: 600;
 }
 
 .form-group input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     font-size: 14px;
     box-sizing: border-box;
+    border-radius: 4px;
 }
 
 .form-group input:focus {
-    border-color: #ff8b33;
+    border-color: #f3c507; /* Cambiado a amarillo */
     outline: none;
+    box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2);
 }
 
 .btn-submit {
-    background-color: #ff8b33;
+    background-color: #8b2801; /* Cambiado a marrón rojizo */
     color: white;
     border: none;
     padding: 10px;
@@ -106,11 +116,20 @@ main {
     font-size: 14px;
     cursor: pointer;
     margin-top: 5px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #a73201; /* Marrón más claro para hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3);
 }
 
 /*El footer*/
 footer {
-    background-color: #222;
+    background-color: #333; /* Mantenido el gris oscuro */
     color: white;
     padding: 10px;
     position:static;
