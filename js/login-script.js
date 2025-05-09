@@ -13,6 +13,7 @@ function handleLogin(event) {
         // Almacenar el estado de inicio de sesión y el nombre de usuario
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userName', email.split('@')[0]); // Usar parte del email como nombre
+        localStorage.setItem('userEmail', email); // Guardar el email completo
         
         // Redirigir a la página de inicio
         window.location.href = 'Inicio.html';
@@ -33,7 +34,7 @@ function checkLoginStatus() {
             <div class="user-menu">
                 <button class="user-menu-button">${userName}</button>
                 <div class="dropdown-content">
-                    <a href="#">Mi Perfil</a>
+                    <a href="MyProfile.html">Mi Perfil</a>
                     <a href="#" onclick="logout()">Cerrar Sesión</a>
                 </div>
             </div>
@@ -45,6 +46,7 @@ function checkLoginStatus() {
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userName');
+    localStorage.removeItem('userEmail');
     window.location.reload(); // Recargar la página para mostrar el botón de inicio de sesión
 }
 
