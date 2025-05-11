@@ -72,25 +72,6 @@ header {
 }
 /*Fin boton login*/
 
-/* Estilos para el botón de la Carta */
-.Carta-boton {
-    background-color: #8b2801;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.Carta-boton:hover {
-    background-color: #f3c507;
-    color: #8b2801;
-    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
-}
 
 
 /*Inicio del carrusel*/
