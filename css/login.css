@@ -3,6 +3,7 @@
     font-family: 'Lordish';
     src: url('./Font/Lordish-Regular.ttf') format('truetype'),
 }
+
 /*Cuerpo general de la pagina*/
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,6 +14,7 @@ body {
     color: #333; /* Color de texto principal */
     line-height: 1.6;
 }
+
 /*Empieza el header*/
 header {
     background-color: #8b2801; /* Cambiado a marrón rojizo */
@@ -23,6 +25,7 @@ header {
     font-size: 50px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
 .titulo {
     font-family: 'Lordish';
     margin: 0 auto; /* Centra el título horizontalmente */
@@ -31,6 +34,8 @@ header {
     font-size: 50px;
     line-height: 0;
 }
+
+/* Navegación */
 nav {
     display: flex;
     gap: 20px;
@@ -38,20 +43,24 @@ nav {
     font-size: clamp(25px, 30px, 35px);
     justify-content: center;
 }
+
 nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 nav li {
     margin-right: 90px;
 }
+
 nav a {
     color: white;
     text-decoration: none;
 }
 
+/* Contenido principal */
 main {
     flex: 1;
     display: flex;
@@ -80,6 +89,7 @@ main {
     border-bottom: 2px solid #f3c507; /* Añadido borde amarillo */
 }
 
+/* Formulario */
 .form-group {
     margin-bottom: 15px;
 }
@@ -107,6 +117,7 @@ main {
     box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2);
 }
 
+/* Botón de envío */
 .btn-submit {
     background-color: #8b2801; /* Cambiado a marrón rojizo */
     color: white;
@@ -132,7 +143,7 @@ footer {
     background-color: #333; /* Mantenido el gris oscuro */
     color: white;
     padding: 10px;
-    position:static;
+    position: static;
     bottom: 0;
     width: 100%;
 }

@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BurgerLord</title>
-    <link rel="stylesheet" href='./css/style.css'>
-    <link rel="shortcut icon" href='./Images/Lord2.ico'/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BurgerLord</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="shortcut icon" href="./Images/Lord2.ico" />
+  <script src="./js/burgers.js"></script>
 </head>
-
 <body>
-    <header>
-        <section class="titulo" onclick="window.location.href='Inicio.html'">BurgerLord 🍔</section>
-        <nav>
-            <ul>
-                <li><a href="Inicio.html">Inicio</a></li>
-                <li><a href="Burgers.html">Burgers</a></li>
-                <li><a href="Complementos.html">Complementos</a></li>
-                <li><a href="Menus.html">Menus</a></li>
-                <li><a href="Trabaja.html">Trabaja con nosotros </a></li>
-            </ul>
-        </nav>
-    </header>
-    <button class="Carta-boton" onclick="window.location.href='Carta.html'">Vuelve a la Carta</button>
-    <footer>
-        &copy; 2025 Hamburguesería BurgerLord - ¡Saborea la diferencia de verdad, no el rey de las excusas! 🍔🔥
-    </footer>
+  <header>
+    <a href="Carta.html" class="home-button">
+      <span>🔙</span> Volver a la Carta
+    </a>
+    <section class="titulo" onclick="window.location.href='Inicio.html'">BurgerLord 🍔</section>
+  </header>
+
+  <section class="menu" id="menu-container"></section>
+
+  <footer>
+    &copy; 2025 Hamburguesería BurgerLord - ¡Saborea la diferencia de verdad, no el rey de las excusas! 🍔🔥
+  </footer>
+
 </body>
+</html>

@@ -1,26 +1,28 @@
-/*Fuentes nuevas*/
+/* ========== FUENTES ========== */
 @font-face {
     font-family: 'Lordish';
     src: url('./Font/Lordish-Regular.ttf') format('truetype');
 }
-/*Fin fuentes nuevas*/
 
-/* Estilos generales */
+/* ========== ESTILOS GENERALES ========== */
 body {
-    
-    font-family: Arial, sans-serif;
-    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f5f0; /* Fondo crema */
+    color: #333; /* Color de texto principal */
+    line-height: 1.6;
 }
 
-/* Estilos del encabezado */
+/* ========== HEADER ========== */
 header {
-    background-color: #ff8b33;
+    background-color: #8b2801; /* Marrón rojizo */
     color: white;
     position: relative;
     padding: 20px;
     box-sizing: border-box;
     font-size: 50px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .titulo {
@@ -32,14 +34,36 @@ header {
     line-height: 1;
 }
 
-/* Estilos de la navegación */
+.home-button {
+    position: absolute;
+    left: 20px;
+    background-color: #f3c507;
+    color: #8b2801;
+    padding: 0.3rem 0.7rem;  /* Padding más pequeño */
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.home-button:hover {
+    background-color: #ffda44;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== NAVEGACIÓN ========== */
 .menu-principal {
-    background-color: #ffffff;
+    background-color: #fff; /* Blanco */
     padding: 25px 0;
     margin: 30px auto;
     max-width: 80%;
     border-radius: 10px;
-    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .menu-principal ul {
@@ -67,24 +91,37 @@ header {
     transition: all 0.3s ease;
     display: block;
     text-align: center;
+    border: 2px solid transparent;
 }
 
 .menu-principal a:hover {
-    background-color: #ff8b33;
+    background-color: #8b2801; /* Marrón rojizo */
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3);
 }
 
-/* Estilos del contenido principal */
+/* Enlaces destacados */
+.menu-principal a.destacado {
+    border: 2px solid #f3c507; /* Borde amarillo para elementos destacados */
+    color: #8b2801; /* Color de texto marrón */
+}
+
+.menu-principal a.destacado:hover {
+    background-color: #f3c507; /* Fondo amarillo al pasar el cursor */
+    color: #8b2801; /* Texto marrón */
+}
+
+/* ========== CONTENIDO PRINCIPAL ========== */
 main {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Estilos del pie de página */
+/* ========== FOOTER ========== */
 footer {
-    background-color: #333;
+    background-color: #333; /* Gris oscuro */
     color: white;
     text-align: center;
     padding: 20px;

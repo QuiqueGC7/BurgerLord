@@ -1,26 +1,27 @@
-/*Fuentes nuevas*/
+/* ========== FUENTES ========== */
 @font-face {
     font-family: 'Lordish';
-    src: url('./Font/Lordish-Regular.ttf') format('truetype'),
+    src: url('./Font/Lordish-Regular.ttf') format('truetype');
 }
-/*Fin fuentes nuevas*/
 
-
-/*Cuerpo general de la pagina*/
+/* ========== ESTILOS GENERALES ========== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f9f5f0; /* Cambiado a fondo crema */
+    background-color: #f9f5f0; /* Fondo crema */
     color: #333; /* Color de texto principal */
     line-height: 1.6;
 }
-/*Fin del body*/
 
+/* Estilos de imagen generales */
+img {
+    width: 100%;
+    border-radius: 10px;
+}
 
-
-/*Empieza el header*/
+/* ========== HEADER ========== */
 header {
     background-color: #8b2801;
     color: white;
@@ -42,11 +43,30 @@ header {
     margin: 0; /* Eliminar margen automático */
 }
 
-/* Fin del Header */
+/* Botón de inicio/home */
+.home-button {
+    position: absolute;
+    left: 20px;
+    background-color: #f3c507;
+    color: #8b2801;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
+.home-button:hover {
+    background-color: #ffda44;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-
-/* Botón de login en la esquina superior derecha */
+/* ========== BOTONES DE NAVEGACIÓN ========== */
+/* Botón de login */
 .login-button {
     position: absolute;
     top: 50%; /* Centrar verticalmente */
@@ -70,9 +90,8 @@ header {
     background-color: #ffda44; /* Amarillo más brillante para hover */
     color: #8b2801;
 }
-/*Fin boton login*/
 
-/* Estilos para el botón de la Carta */
+/* Botón de la carta */
 .Carta-boton {
     background-color: #8b2801;
     color: white;
@@ -92,9 +111,7 @@ header {
     transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
 }
 
-
-/*Inicio del carrusel*/
-
+/* ========== CARRUSEL ========== */
 .carrusel-container {
     max-width: 650px; /*Tamaño del contenedor del carrusel*/
     margin: 20px auto;
@@ -117,14 +134,13 @@ header {
 
 .slide img {
     width: 100%; /*Ocupa el ancho del contenedor disponible*/
-    
 }
 
 .carrusel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(139, 40, 1, 0.7); /* Cambiado a marrón rojizo semi-transparente */
+    background-color: rgba(139, 40, 1, 0.7); /* Marrón rojizo semi-transparente */
     color: white;
     border: none;
     padding: 8px 15px;
@@ -140,16 +156,14 @@ header {
     right: 10px; /*Pone el boton a 10 px de la derecha del carrusel*/
 }
 
-/*Fin del carrusel*/
-
-
-/*Productos del menu*/
+/* ========== MENÚ DE PRODUCTOS ========== */
 .menu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px;
 }
+
 .menu-item {
     background: white;
     margin: 15px;
@@ -158,30 +172,24 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 250px;
 }
+
 .categoria {
     width: 100%;
     text-align: left;
     padding: 10px 20px;
-    color: #8b2801; /* Cambiado a marrón rojizo */
+    color: #8b2801; /* Marrón rojizo */
     font-size: clamp(22px, 3vw, 30px);
-  }
-img {
-    width: 100%;
-    border-radius: 10px;
 }
-/*Fin productos menu*/
 
-
-
-/* Estilos para el menú de usuario */
+/* ========== MENÚ DE USUARIO ========== */
 .user-menu {
     position: relative;
     display: inline-block;
 }
 
 .user-menu-button {
-    background-color: #f3c507; /* Cambiado a amarillo */
-    color: #8b2801; /* Cambiado a marrón rojizo */
+    background-color: #f3c507; /* Amarillo */
+    color: #8b2801; /* Marrón rojizo */
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -217,17 +225,15 @@ img {
 }
 
 .dropdown-content a:hover {
-    background-color: #f9f5f0; /* Cambiado a fondo crema */
-    color: #8b2801; /* Cambiado a marrón rojizo */
+    background-color: #f9f5f0; /* Fondo crema */
+    color: #8b2801; /* Marrón rojizo */
 }
 
 .user-menu:hover .dropdown-content {
     display: block;
 }
-/*Fin menu usuario*/
 
-
-/* Estilos para el banner de trabajo */
+/* ========== BANNER DE TRABAJO ========== */
 .trabajo-banner {
     background-color: #ff5100;
     margin: 20px auto;
@@ -264,49 +270,52 @@ img {
     background-color: #ffeb3b;
 }
 
-
-
-/*El footer*/
+/* ========== FOOTER ========== */
 footer {
-    background-color: #333; /* Mantenido el gris oscuro */
+    background-color: #333; /* Gris oscuro */
     color: white;
     padding: 10px;
-    position:static;
+    position: static;
     bottom: 0;
     width: 100%;
 }
-/*Fin footer*/
 
-
-
-/* Estilos responsivos para móviles */
+/* ========== MEDIA QUERIES (RESPONSIVE) ========== */
 @media (max-width: 850px) {
     nav ul {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
   
     nav li {
-      margin-right: 0;
-      margin-bottom: 10px;
+        margin-right: 0;
+        margin-bottom: 10px;
     }
+    
+    .home-button {
+        /* Asegurar que el botón se adapte bien en pantallas pequeñas */
+        font-size: 14px;
+        padding: 0.4rem 0.8rem;
+    }
+    
     .login-button {
         position: static; /* Quita el posicionamiento absoluto en móviles */
         margin: 10px auto; /* Centra el botón en móviles */
         text-align: center;
         display: block;
     }
+    
     .menu {
         justify-content: space-between;
     }
     
-      .menu-item {
+    .menu-item {
         flex: 0 0 35%; /* Ocupa 35% del ancho, caben 2 */
         padding: 10px;
         font-size: 16px; /* Tamaño de texto más pequeño */
-      }
+    }
     
-      .menu-item img {
+    .menu-item img {
         width: 100%;
-      }
+    }
 }

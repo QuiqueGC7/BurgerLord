@@ -1,9 +1,4 @@
-.titulo {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 0 auto;
-}/* Reset básico */
+/* Reset básico */
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +18,13 @@ header {
     align-items: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     position: relative;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 auto;
 }
 
 .home-button {
@@ -53,7 +55,6 @@ header {
     padding: 0 1.5rem;
 }
 
-/* Encabezado principal */
 .profile-container h1 {
     color: #8b2801;
     margin-bottom: 1.5rem;
