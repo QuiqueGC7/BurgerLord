@@ -1,0 +1,170 @@
+/* ========== FUENTES ========== */
+@font-face {
+    font-family: 'Lordish';
+    src: url('./Font/Lordish-Regular.ttf') format('truetype');
+}
+
+/* ========== ESTILOS GENERALES ========== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f5f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8b2801;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    font-family: 'Lordish';
+    text-align: center;
+    padding: 15px;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0;
+}
+
+/* Botón de inicio/home */
+.home-button {
+    position: absolute;
+    left: 20px;
+    background-color: #f3c507;
+    color: #8b2801;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.home-button:hover {
+    background-color: #ffda44;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== ESTILOS ADICIONALES PARA EL PANEL ========== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.action-buttons button {
+    padding: 10px 20px;
+    background-color: #8b2801;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.action-buttons button:hover {
+    background-color: #6b1f01;
+}
+
+#burgerTable {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#burgerTable th, #burgerTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#burgerTable th {
+    background-color: #f2f2f2;
+}
+
+/* ========== ESTILOS DE MODAL ========== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* ========== ESTILOS DE FORMULARIO ========== */
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ========== ESTILOS DE NOTIFICACIÓN ========== */
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+}
+
+.export-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #8b2801;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.export-button:hover {
+    background-color: #6b1f01;
+}

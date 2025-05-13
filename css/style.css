@@ -1,10 +1,12 @@
-/* ========== FUENTES ========== */
+/* ========== SECCIÓN 1: ESTILOS COMUNES PARA TODOS LOS HTML ========== */
+
+/* Fuentes personalizadas */
 @font-face {
     font-family: 'Lordish';
     src: url('./Font/Lordish-Regular.ttf') format('truetype');
 }
 
-/* ========== ESTILOS GENERALES ========== */
+/* Estilos generales del cuerpo */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -21,175 +23,48 @@ img {
     border-radius: 10px;
 }
 
-/* ========== HEADER ========== */
+/* Header principal - Común para todos */
 header {
     background-color: #8b2801;
     color: white;
-    padding: 10px 20px; /* Reducido el padding vertical */
+    padding: 10px 20px;
     box-sizing: border-box;
-    display: flex; /* Usar flexbox para alinear elementos */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    position: relative; /* Mantener posición relativa para el botón de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Título principal - Común para todos */
 .titulo {
     font-family: 'Lordish';
     text-align: center;
-    padding: 15px; /* Reducido el padding */
+    padding: 15px;
     font-size: 50px;
-    line-height: 1; /* Ajustado para evitar espacio extra */
-    margin: 0; /* Eliminar margen automático */
+    line-height: 1;
+    margin: 0;
 }
 
-/* Botón de inicio/home */
-.home-button {
-    position: absolute;
-    left: 20px;
-    background-color: #f3c507;
-    color: #8b2801;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.home-button:hover {
-    background-color: #ffda44;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* ========== BOTONES DE NAVEGACIÓN ========== */
-/* Botón de login */
-.login-button {
-    position: absolute;
-    top: 50%; /* Centrar verticalmente */
-    right: 20px;
-    transform: translateY(-50%); /* Ajustar la posición vertical */
-}
-
-.btn-login {
-    background-color: #f3c507;
-    color: #8b2801;
-    padding: 8px 16px; /* Reducido el padding */
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px; /* Reducido el tamaño de fuente */
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block; /* Asegurar que se comporte como bloque inline */
-}
-
-.btn-login:hover {
-    background-color: #ffda44; /* Amarillo más brillante para hover */
-    color: #8b2801;
-}
-
-/* Botón de la carta */
-.Carta-boton {
-    background-color: #8b2801;
+/* Footer - Común para todos */
+footer {
+    background-color: #333;
     color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.Carta-boton:hover {
-    background-color: #f3c507;
-    color: #8b2801;
-    transform: scale(1.05); /* Pequeño zoom al pasar el ratón */
-}
-
-/* ========== CARRUSEL ========== */
-.carrusel-container {
-    max-width: 650px; /*Tamaño del contenedor del carrusel*/
-    margin: 20px auto;
-    position: relative;
-}
-
-.carrusel {
-    display: flex;
-    overflow: hidden; /*Oculta el resto de imagenes*/
-}
-
-.slide {
-    min-width: 100%; /*Ocupa el ancho disponible*/
-    display: none; /*Mostrar la diapositiva que tenga clase active*/
-}
-
-.slide.active {
-    display: block; /*Hace visible la foto*/
-}
-
-.slide img {
-    width: 100%; /*Ocupa el ancho del contenedor disponible*/
-}
-
-.carrusel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(139, 40, 1, 0.7); /* Marrón rojizo semi-transparente */
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.prev {
-    left: 10px; /*Pone el boton a 10 px de la izquierda del carrusel*/
-}
-
-.next {
-    right: 10px; /*Pone el boton a 10 px de la derecha del carrusel*/
-}
-
-/* ========== MENÚ DE PRODUCTOS ========== */
-.menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px;
-}
-
-.menu-item {
-    background: white;
-    margin: 15px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-}
-
-.categoria {
+    padding: 10px;
+    position: static;
+    bottom: 0;
     width: 100%;
-    text-align: left;
-    padding: 10px 20px;
-    color: #8b2801; /* Marrón rojizo */
-    font-size: clamp(22px, 3vw, 30px);
 }
 
-/* ========== MENÚ DE USUARIO ========== */
+/* Menú de usuario - Común para todos */
 .user-menu {
     position: relative;
     display: inline-block;
 }
 
 .user-menu-button {
-    background-color: #f3c507; /* Amarillo */
-    color: #8b2801; /* Marrón rojizo */
+    background-color: #f3c507;
+    color: #8b2801;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -225,15 +100,107 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: #f9f5f0; /* Fondo crema */
-    color: #8b2801; /* Marrón rojizo */
+    background-color: #f9f5f0;
+    color: #8b2801;
 }
 
 .user-menu:hover .dropdown-content {
     display: block;
 }
 
-/* ========== BANNER DE TRABAJO ========== */
+/* ========== SECCIÓN 2: ESTILOS ESPECÍFICOS PARA INICIO.HTML ========== */
+
+/* Botón de login - Específico para Inicio.html */
+.login-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.btn-login {
+    background-color: #f3c507;
+    color: #8b2801;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-login:hover {
+    background-color: #ffda44;
+    color: #8b2801;
+}
+
+/* Botón de la carta - Específico para Inicio.html */
+.Carta-boton {
+    background-color: #8b2801;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.Carta-boton:hover {
+    background-color: #f3c507;
+    color: #8b2801;
+    transform: scale(1.05);
+}
+
+/* Carrusel de imágenes - Específico para Inicio.html */
+.carrusel-container {
+    max-width: 650px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.carrusel {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    min-width: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(139, 40, 1, 0.7);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Banner de trabajo - Específico para Inicio.html */
 .trabajo-banner {
     background-color: #ff5100;
     margin: 20px auto;
@@ -270,18 +237,58 @@ header {
     background-color: #ffeb3b;
 }
 
-/* ========== FOOTER ========== */
-footer {
-    background-color: #333; /* Gris oscuro */
-    color: white;
-    padding: 10px;
-    position: static;
-    bottom: 0;
-    width: 100%;
+/* ========== SECCIÓN 3: ESTILOS PARA BURGERS, COMPLEMENTOS Y MENUS ========== */
+
+/* Botón de volver a la carta - Para Burgers, Complementos y Menus */
+.home-button {
+    position: absolute;
+    left: 20px;
+    background-color: #f3c507;
+    color: #8b2801;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-/* ========== MEDIA QUERIES (RESPONSIVE) ========== */
+.home-button:hover {
+    background-color: #ffda44;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedores de menú - Para Burgers, Complementos y Menus */
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.menu-item {
+    background: white;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.categoria {
+    width: 100%;
+    text-align: left;
+    padding: 10px 20px;
+    color: #8b2801;
+    font-size: clamp(22px, 3vw, 30px);
+}
+
+/* ========== SECCIÓN 4: MEDIA QUERIES (RESPONSIVE) ========== */
 @media (max-width: 850px) {
+    /* Navegación responsiva */
     nav ul {
         flex-direction: column;
         align-items: center;
@@ -292,27 +299,28 @@ footer {
         margin-bottom: 10px;
     }
     
+    /* Ajustes responsivos para botones */
     .home-button {
-        /* Asegurar que el botón se adapte bien en pantallas pequeñas */
         font-size: 14px;
         padding: 0.4rem 0.8rem;
     }
     
     .login-button {
-        position: static; /* Quita el posicionamiento absoluto en móviles */
-        margin: 10px auto; /* Centra el botón en móviles */
+        position: static;
+        margin: 10px auto;
         text-align: center;
         display: block;
     }
     
+    /* Ajustes responsivos para menús */
     .menu {
         justify-content: space-between;
     }
     
     .menu-item {
-        flex: 0 0 35%; /* Ocupa 35% del ancho, caben 2 */
+        flex: 0 0 35%;
         padding: 10px;
-        font-size: 16px; /* Tamaño de texto más pequeño */
+        font-size: 16px;
     }
     
     .menu-item img {
