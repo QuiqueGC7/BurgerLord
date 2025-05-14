@@ -10,11 +10,15 @@ async function handleLogin(event) {
     
     try {
         // Cargar empleados
-        const response = await fetch('./json/Employees.json');
-        const data = await response.json();
+        const employeeResponse = await fetch('./json/Employees.json');
+        const employeeData = await employeeResponse.json();
+        
+        // Cargar clientes
+        const customerResponse = await fetch('./json/Customers.json');
+        const customerData = await customerResponse.json();
         
         // Buscar empleado con email y contraseña coincidentes
-        const employee = data.Employees.find(emp => 
+        const employee = employeeData.Employees.find(emp => 
             emp.Employee_EMail.toLowerCase() === email.toLowerCase() && 
             emp.Employee_Password === password
         );
@@ -25,24 +29,32 @@ async function handleLogin(event) {
             localStorage.setItem('employeeName', employee.Employee_Name);
             localStorage.setItem('userEmail', employee.Employee_EMail);
             localStorage.setItem('userName', employee.Employee_Name);
+            localStorage.setItem('isLoggedIn', 'true');
+            
+            // Redirigir a la página de inicio
+            window.location.href = 'Inicio.html';
         } else {
-            // No es empleado, podrías aquí añadir lógica para usuarios normales
-            // Por ahora, solo mostramos error
-            if (email !== '' && password !== '') {
+            // No es empleado, verificar si es un cliente
+            const customer = customerData.find(cust => 
+                cust.Customer_Email.toLowerCase() === email.toLowerCase() && 
+                cust.Customer_Password === password
+            );
+            
+            if (customer) {
+                // Es un cliente regular
                 localStorage.setItem('isEmployee', 'false');
-                localStorage.setItem('userName', email.split('@')[0]);
-                localStorage.setItem('userEmail', email);
+                localStorage.setItem('userName', customer.Customer_Name);
+                localStorage.setItem('userEmail', customer.Customer_Email);
+                localStorage.setItem('isLoggedIn', 'true');
+                
+                // Redirigir a la página de inicio
+                window.location.href = 'Inicio.html';
             } else {
+                // No coincide con ningún usuario ni empleado
                 alert('Correo o contraseña incorrectos');
                 return;
             }
         }
-        
-        // Guardar estado de inicio de sesión
-        localStorage.setItem('isLoggedIn', 'true');
-        
-        // Redirigir a la página de inicio
-        window.location.href = 'Inicio.html';
     } catch (error) {
         console.error('Error de inicio de sesión:', error);
         alert('Error al iniciar sesión. Inténtalo de nuevo.');
@@ -58,28 +70,28 @@ function checkEmployeeStatus() {
     const loginButton = document.querySelector('.login-button');
     
     // Si está logueado
-if (isLoggedIn === 'true' && loginButton) {
-    if (isEmployee === 'true') {
-        // Si es un empleado, mostrar botón de panel de empleados
-        const header = document.querySelector('header');
-        const titulo = document.querySelector('.titulo');
-        const employeePanelButton = document.createElement('a');
-        employeePanelButton.href = 'Panel_Empleados.html';
-        employeePanelButton.className = 'home-button';
-        employeePanelButton.innerHTML = '<span>👥</span> Panel';
-        header.insertBefore(employeePanelButton, titulo);
-    }
+    if (isLoggedIn === 'true' && loginButton) {
+        if (isEmployee === 'true') {
+            // Si es un empleado, mostrar botón de panel de empleados
+            const header = document.querySelector('header');
+            const titulo = document.querySelector('.titulo');
+            const employeePanelButton = document.createElement('a');
+            employeePanelButton.href = 'Panel_Empleados.html';
+            employeePanelButton.className = 'home-button';
+            employeePanelButton.innerHTML = '<span>👥</span> Panel';
+            header.insertBefore(employeePanelButton, titulo);
+        }
 
-    loginButton.innerHTML = `
-        <div class="user-menu">
-            <button class="user-menu-button">${userName}</button>
-            <div class="dropdown-content">
-                <a href="MyProfile.html">Mi Perfil</a>
-                <a href="#" onclick="logout()">Cerrar Sesión</a>
+        loginButton.innerHTML = `
+            <div class="user-menu">
+                <button class="user-menu-button">${userName}</button>
+                <div class="dropdown-content">
+                    <a href="MyProfile.html">Mi Perfil</a>
+                    <a href="#" onclick="logout()">Cerrar Sesión</a>
+                </div>
             </div>
-        </div>
-    `;
-}
+        `;
+    }
 }
 
 // Función para cerrar sesión
