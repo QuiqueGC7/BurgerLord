@@ -1,53 +1,95 @@
-// Script para manejar el inicio de sesión y el menú desplegable
+// Script para manejar el inicio de sesión de empleados y usuarios
 
 // Función que se ejecuta cuando el formulario de login se envía
-function handleLogin(event) {
+async function handleLogin(event) {
     event.preventDefault();
     
     // Obtener email y contraseña
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
-    // Validación básica
-    if (email && password) {
-        // Almacenar el estado de inicio de sesión y el nombre de usuario
+    try {
+        // Cargar empleados
+        const response = await fetch('./json/Employees.json');
+        const data = await response.json();
+        
+        // Buscar empleado con email y contraseña coincidentes
+        const employee = data.Employees.find(emp => 
+            emp.Employee_EMail.toLowerCase() === email.toLowerCase() && 
+            emp.Employee_Password === password
+        );
+        
+        if (employee) {
+            // Es un empleado
+            localStorage.setItem('isEmployee', 'true');
+            localStorage.setItem('employeeName', employee.Employee_Name);
+            localStorage.setItem('userEmail', employee.Employee_EMail);
+            localStorage.setItem('userName', employee.Employee_Name);
+        } else {
+            // No es empleado, podrías aquí añadir lógica para usuarios normales
+            // Por ahora, solo mostramos error
+            if (email !== '' && password !== '') {
+                localStorage.setItem('isEmployee', 'false');
+                localStorage.setItem('userName', email.split('@')[0]);
+                localStorage.setItem('userEmail', email);
+            } else {
+                alert('Correo o contraseña incorrectos');
+                return;
+            }
+        }
+        
+        // Guardar estado de inicio de sesión
         localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userName', email.split('@')[0]); // Usar parte del email como nombre
-        localStorage.setItem('userEmail', email); // Guardar el email completo
         
         // Redirigir a la página de inicio
         window.location.href = 'Inicio.html';
-    } else {
-        alert('Por favor, completa todos los campos');
+    } catch (error) {
+        console.error('Error de inicio de sesión:', error);
+        alert('Error al iniciar sesión. Inténtalo de nuevo.');
     }
 }
 
-// Función para comprobar si el usuario está logueado y actualizar la interfaz
-function checkLoginStatus() {
+// Función para comprobar el estado de empleado y actualizar la interfaz
+function checkEmployeeStatus() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const isEmployee = localStorage.getItem('isEmployee');
+    const employeeName = localStorage.getItem('employeeName');
     const userName = localStorage.getItem('userName');
     const loginButton = document.querySelector('.login-button');
     
-    // Si el usuario está logueado, mostrar el menú desplegable
-    if (isLoggedIn === 'true' && loginButton) {
-        loginButton.innerHTML = `
-            <div class="user-menu">
-                <button class="user-menu-button">${userName}</button>
-                <div class="dropdown-content">
-                    <a href="MyProfile.html">Mi Perfil</a>
-                    <a href="#" onclick="logout()">Cerrar Sesión</a>
-                </div>
-            </div>
-        `;
+    // Si está logueado
+if (isLoggedIn === 'true' && loginButton) {
+    if (isEmployee === 'true') {
+        // Si es un empleado, mostrar botón de panel de empleados
+        const header = document.querySelector('header');
+        const titulo = document.querySelector('.titulo');
+        const employeePanelButton = document.createElement('a');
+        employeePanelButton.href = 'Panel_Empleados.html';
+        employeePanelButton.className = 'home-button';
+        employeePanelButton.innerHTML = '<span>👥</span> Panel';
+        header.insertBefore(employeePanelButton, titulo);
     }
+
+    loginButton.innerHTML = `
+        <div class="user-menu">
+            <button class="user-menu-button">${userName}</button>
+            <div class="dropdown-content">
+                <a href="MyProfile.html">Mi Perfil</a>
+                <a href="#" onclick="logout()">Cerrar Sesión</a>
+            </div>
+        </div>
+    `;
+}
 }
 
 // Función para cerrar sesión
 function logout() {
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('isEmployee');
+    localStorage.removeItem('employeeName');
     localStorage.removeItem('userName');
     localStorage.removeItem('userEmail');
-    window.location.reload(); // Recargar la página para mostrar el botón de inicio de sesión
+    window.location.reload();
 }
 
 // Cuando el documento esté cargado
@@ -58,6 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', handleLogin);
     }
     
-    // Comprobar el estado de inicio de sesión para todas las páginas
-    checkLoginStatus();
+    // Comprobar el estado de empleado para todas las páginas
+    checkEmployeeStatus();
 });
