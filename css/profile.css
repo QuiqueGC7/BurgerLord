@@ -1,214 +1,233 @@
-/* Reset básico */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f9f5f0;
-    color: #333;
-    line-height: 1.6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* RESET BÁSICO - Estilos base del documento */
+   body {
+    margin: 0;                /* Elimina márgenes predeterminados del navegador */
+    padding: 0;               /* Elimina padding predeterminado del navegador */
+    background-color: #f9f5f0; /* Color de fondo crema suave para toda la página */
+    color: #333;              /* Color de texto gris oscuro para buena legibilidad */
+    line-height: 1.6;         /* Altura de línea 1.6x el tamaño de fuente para mejor lectura */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Stack de fuentes con fallbacks */
 }
 
-/* Header */
+/* HEADER - Cabecera principal del sitio */
 header {
-    background-color: #8b2801;
-    color: #fff;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+    background-color: #8b2801; /* Fondo marrón rojizo característico */
+    color: #fff;              /* Texto blanco para contraste */
+    padding: 1rem 5%;         /* Padding vertical 1rem, horizontal 5% para responsive */
+    display: flex;            /* Contenedor flex para alineación */
+    justify-content: space-between; /* Distribuye elementos con espacio entre ellos */
+    align-items: center;      /* Centra elementos verticalmente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidad */
+    position: relative;       /* Necesario para posicionar elementos hijos absolutamente */
 }
 
+/* Título principal en el header */
 .titulo {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 0 auto;
+    font-size: 2rem;          /* Tamaño grande para el título (32px) */
+    font-weight: bold;        /* Negrita para mayor impacto */
+    letter-spacing: 1px;      /* Espaciado entre letras para elegancia */
+    margin: 0 auto;           /* Centra horizontalmente eliminando márgenes y auto-centrando */
 }
 
+/* Botón de inicio/home */
 .home-button {
-    position: absolute;
-    left: 20px;
-    background-color: #f3c507;
-    color: #8b2801;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    position: absolute;       /* Posicionamiento absoluto respecto al header */
+    left: 20px;              /* 20px desde el borde izquierdo */
+    background-color: #f3c507; /* Fondo amarillo dorado */
+    color: #8b2801;          /* Texto marrón rojizo */
+    padding: 0.5rem 1rem;    /* Espaciado interno: 0.5rem vertical, 1rem horizontal */
+    border-radius: 4px;      /* Esquinas ligeramente redondeadas */
+    text-decoration: none;   /* Elimina subrayado de enlaces */
+    font-weight: bold;       /* Texto en negrita */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+    display: flex;           /* Flex para alinear ícono y texto */
+    align-items: center;     /* Centra contenido verticalmente */
+    gap: 5px;               /* Espacio entre elementos (útil si hay ícono) */
 }
 
+/* Estado hover del botón home */
 .home-button:hover {
-    background-color: #ffda44;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #ffda44; /* Amarillo más brillante al hover */
+    transform: translateY(-2px); /* "Levanta" el botón 2px */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
 }
 
-/* Contenedor principal */
+/* CONTENEDOR PRINCIPAL - Wrapper del perfil */
 .profile-container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+    max-width: 900px;         /* Ancho máximo para mejor legibilidad */
+    margin: 2rem auto;        /* Margen superior/inferior 2rem, centrado horizontal */
+    padding: 0 1.5rem;        /* Padding lateral para móviles */
 }
 
+/* Título principal del perfil */
 .profile-container h1 {
-    color: #8b2801;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-size: 2.2rem;
-    position: relative;
-    padding-bottom: 0.5rem;
+    color: #8b2801;           /* Color marrón rojizo */
+    margin-bottom: 1.5rem;    /* Espacio inferior */
+    text-align: center;       /* Texto centrado */
+    font-size: 2.2rem;        /* Tamaño grande (35.2px) */
+    position: relative;       /* Para posicionar el pseudo-elemento */
+    padding-bottom: 0.5rem;   /* Espacio para la línea decorativa */
 }
 
+/* Línea decorativa bajo el título */
 .profile-container h1::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background-color: #f3c507;
+    content: '';              /* Pseudo-elemento vacío */
+    position: absolute;       /* Posicionamiento absoluto */
+    left: 50%;               /* Comienza en el centro */
+    bottom: 0;               /* En la parte inferior del título */
+    transform: translateX(-50%); /* Centra exactamente */
+    width: 100px;            /* Ancho de la línea */
+    height: 3px;             /* Grosor de la línea */
+    background-color: #f3c507; /* Color amarillo dorado */
 }
 
-/* Tarjeta de perfil */
+/* TARJETA DE PERFIL - Contenedor principal */
 .profile-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    background-color: #fff;   /* Fondo blanco */
+    border-radius: 8px;       /* Esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para elevación */
+    overflow: hidden;         /* Oculta contenido que sobresalga (importante para el header) */
 }
 
-/* Encabezado de la tarjeta */
+/* ENCABEZADO DE LA TARJETA - Sección superior */
 .profile-header {
-    background-color: #8b2801;
-    color: #fff;
-    padding: 1.5rem;
-    text-align: center;
+    background-color: #8b2801; /* Fondo marrón rojizo */
+    color: #fff;              /* Texto blanco */
+    padding: 1.5rem;          /* Espaciado interno generoso */
+    text-align: center;       /* Todo el contenido centrado */
 }
 
+/* Nombre del usuario en el header */
 #profile-name {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;        /* Tamaño grande (28.8px) */
+    margin-bottom: 0.5rem;    /* Espacio inferior */
 }
 
+/* Email del usuario */
 #profile-email {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 1rem;          /* Tamaño estándar (16px) */
+    opacity: 0.9;             /* Ligeramente transparente para jerarquía visual */
 }
 
-/* Información del perfil */
+/* INFORMACIÓN DEL PERFIL - Sección de contenido */
 .profile-info {
-    padding: 2rem;
+    padding: 2rem;            /* Espaciado interno generoso */
 }
 
+/* Subtítulos dentro de la info del perfil */
 .profile-info h3 {
-    color: #8b2801;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #f3c507;
+    color: #8b2801;           /* Color marrón rojizo */
+    font-size: 1.5rem;        /* Tamaño mediano (24px) */
+    margin-bottom: 1.5rem;    /* Espacio inferior */
+    padding-bottom: 0.5rem;   /* Espacio para la línea inferior */
+    border-bottom: 2px solid #f3c507; /* Línea amarilla decorativa */
 }
 
-/* Formulario */
+/* FORMULARIO - Estilos del formulario de edición */
 #profile-form {
-    width: 100%;
+    width: 100%;              /* Ocupa todo el ancho disponible */
 }
 
+/* Grupo de campos del formulario */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;    /* Espacio entre grupos de campos */
 }
 
+/* Etiquetas de los campos */
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #555;
+    display: block;           /* Las etiquetas ocupan su propia línea */
+    margin-bottom: 0.5rem;    /* Espacio antes del input */
+    font-weight: 600;         /* Semi-negrita */
+    color: #555;              /* Gris medio para las etiquetas */
 }
 
+/* Campos de entrada de texto */
 .form-group input {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: border 0.3s ease;
+    width: 100%;              /* Ancho completo */
+    padding: 0.8rem;          /* Espaciado interno cómodo */
+    border: 1px solid #ddd;   /* Borde gris claro */
+    border-radius: 4px;       /* Esquinas ligeramente redondeadas */
+    font-size: 1rem;          /* Tamaño de fuente estándar */
+    transition: border 0.3s ease; /* Transición suave del borde */
 }
 
+/* Estado focus de los inputs */
 .form-group input:focus {
-    border-color: #f3c507;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2);
+    border-color: #f3c507;    /* Borde amarillo al enfocar */
+    outline: none;            /* Elimina outline predeterminado */
+    box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2); /* Sombra amarilla sutil */
 }
 
+/* Campos de texto multilínea */
 .form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    min-height: 100px;
-    resize: vertical;
-    transition: border 0.3s ease;
+    width: 100%;              /* Ancho completo */
+    padding: 0.8rem;          /* Espaciado interno */
+    border: 1px solid #ddd;   /* Borde gris claro */
+    border-radius: 4px;       /* Esquinas redondeadas */
+    font-size: 1rem;          /* Tamaño de fuente estándar */
+    min-height: 100px;        /* Altura mínima */
+    resize: vertical;         /* Solo permite redimensionar verticalmente */
+    transition: border 0.3s ease; /* Transición suave del borde */
 }
 
+/* Estado focus de los textareas */
 .form-group textarea:focus {
-    border-color: #f3c507;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2);
+    border-color: #f3c507;    /* Borde amarillo al enfocar */
+    outline: none;            /* Elimina outline predeterminado */
+    box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2); /* Sombra amarilla sutil */
 }
 
-/* Botón guardar */
+/* BOTÓN GUARDAR - Botón de acción principa */
 .save-button {
-    background-color: #8b2801;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: block;
-    margin: 1rem auto 0;
-    width: 200px;
+    background-color: #8b2801; /* Fondo marrón rojizo */
+    color: white;             /* Texto blanco */
+    border: none;             /* Sin borde */
+    padding: 0.8rem 1.5rem;   /* Espaciado interno generoso */
+    font-size: 1rem;          /* Tamaño estándar */
+    font-weight: 600;         /* Semi-negrita */
+    border-radius: 4px;       /* Esquinas redondeadas */
+    cursor: pointer;          /* Cursor de mano al hover */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    display: block;           /* Comportamiento de bloque */
+    margin: 1rem auto 0;      /* Centrado con margen superior */
+    width: 200px;             /* Ancho fijo */
 }
 
+/* Estado hover del botón guardar */
 .save-button:hover {
-    background-color: #a73201;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3);
+    background-color: #a73201; /* Color más oscuro al hover */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3); /* Sombra pronunciada */
 }
 
-/* Footer */
+/* FOOTER - Pie de página*/
 footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+    background-color: #333;   /* Fondo gris oscuro */
+    color: #fff;              /* Texto blanco */
+    text-align: center;       /* Contenido centrado */
+    padding: 1.5rem;          /* Espaciado interno */
+    margin-top: 2rem;         /* Margen superior */
+    font-size: 0.9rem;        /* Texto ligeramente más pequeño */
 }
 
-/* Responsive */
+/* RESPONSIVE - Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
+    /* Ajusta el título para móviles */
     .titulo {
-        font-size: 1.5rem;
+        font-size: 1.5rem;    /* Reduce el tamaño del título */
     }
     
+    /* Reduce el padding del contenedor */
     .profile-container {
-        padding: 0 1rem;
+        padding: 0 1rem;      /* Menos padding lateral en móviles */
     }
     
+    /* Reduce el padding de la info */
     .profile-info {
-        padding: 1.5rem;
+        padding: 1.5rem;      /* Menos espaciado interno */
     }
     
+    /* Botón guardar a ancho completo */
     .save-button {
-        width: 100%;
+        width: 100%;          /* Ocupa todo el ancho en móviles */
     }
 }

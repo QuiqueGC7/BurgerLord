@@ -1,169 +1,182 @@
-/* ========== FUENTES ========== */
-@font-face {
-    font-family: 'Lordish';
-    src: url('./Font/Lordish-Regular.ttf') format('truetype');
+/* FUENTES - Definición de fuentes personalizadas */
+   @font-face {
+    font-family: 'Lordish';     /* Nombre de la fuente personalizada */
+    src: url('./Font/Lordish-Regular.ttf') format('truetype'); /* Ruta del archivo TTF */
 }
 
-/* ========== ESTILOS GENERALES ========== */
+/* ESTILOS GENERALES - Reset y estilos base */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: #f9f5f0; /* Fondo crema */
-    color: #333; /* Color de texto principal */
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Stack de fuentes con fallbacks */
+    margin: 0;                 /* Elimina márgenes predeterminados */
+    padding: 0;                /* Elimina padding predeterminado */
+    text-align: center;        /* Centra todo el texto por defecto */
+    background-color: #f9f5f0; /* Fondo crema suave para toda la página */
+    color: #333;               /* Color de texto gris oscuro */
+    line-height: 1.6;          /* Altura de línea para mejor legibilidad */
 }
 
-/* ========== HEADER ========== */
+/* HEADER - Cabecera principal */
 header {
-    background-color: #8b2801;
-    color: #fff;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: center; /* Centrar los elementos del header */
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
+    background-color: #8b2801; /* Fondo marrón rojizo distintivo */
+    color: #fff;               /* Texto blanco para contraste */
+    padding: 1rem 5%;          /* Padding vertical 1rem, horizontal 5% responsive */
+    display: flex;             /* Contenedor flex para alineación */
+    justify-content: center;   /* Centra el contenido horizontalmente */
+    align-items: center;       /* Centra el contenido verticalmente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    position: relative;        /* Necesario para posicionar el botón home absolutamente */
 }
 
+/* Título principal con fuente personalizada */
 .titulo {
-    font-family: 'Lordish';
-    padding: 20px;
-    font-size: 50px;
-    line-height: 0;
-    /* El título ya no necesita posicionamiento especial porque el header lo centra */
+    font-family: 'Lordish';    /* Usa la fuente personalizada Lordish */
+    padding: 20px;             /* Espaciado alrededor del título */
+    font-size: 50px;           /* Tamaño grande y llamativo */
+    line-height: 0;            /* Reduce el espacio vertical del texto */
+    /* Nota: No necesita posicionamiento especial porque el header lo centra con flexbox */
 }
 
+/* Botón de navegación a inicio */
 .home-button {
-    position: absolute;
-    left: 20px;
-    background-color: #f3c507;
-    color: #8b2801;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    position: absolute;        /* Posicionamiento absoluto dentro del header */
+    left: 20px;                /* 20px desde el borde izquierdo */
+    background-color: #f3c507; /* Fondo amarillo dorado */
+    color: #8b2801;            /* Texto marrón rojizo */
+    padding: 0.5rem 1rem;      /* Espaciado interno cómodo */
+    border-radius: 4px;        /* Esquinas ligeramente redondeadas */
+    text-decoration: none;     /* Elimina subrayado de enlaces */
+    font-weight: bold;         /* Texto en negrita */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    display: flex;             /* Flex para alinear contenido */
+    align-items: center;       /* Centra verticalmente el contenido */
+    gap: 5px;                  /* Espacio entre elementos (útil para íconos) */
 }
 
+/* Estado hover del botón home */
 .home-button:hover {
-    background-color: #ffda44;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #ffda44; /* Amarillo más brillante */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para reforzar elevación */
 }
 
-/* ========== FORMULARIO ========== */
+/* FORMULARIO - Contenedor principal del form */
 .form-container {
-    background: #fff; /* Blanco */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 600px;
-    margin: 40px auto;
-    border: 1px solid #ddd;
+    background: #fff;          /* Fondo blanco limpio */
+    padding: 30px;             /* Espaciado interno generoso */
+    border-radius: 8px;        /* Esquinas redondeadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 90%;                /* 90% del ancho disponible */
+    max-width: 600px;          /* Límite máximo de ancho */
+    margin: 40px auto;         /* Margen superior/inferior 40px, centrado */
+    border: 1px solid #ddd;    /* Borde gris claro */
 }
 
+/* Título del formulario */
 .form-container h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #8b2801; /* Marrón rojizo */
-    font-size: 28px;
-    font-weight: 600;
-    border-bottom: 2px solid #f3c507; /* Amarillo */
-    padding-bottom: 10px;
+    text-align: center;        /* Texto centrado */
+    margin-bottom: 30px;       /* Espacio inferior */
+    color: #8b2801;            /* Color marrón rojizo */
+    font-size: 28px;           /* Tamaño prominente */
+    font-weight: 600;          /* Semi-negrita */
+    border-bottom: 2px solid #f3c507; /* Línea decorativa amarilla */
+    padding-bottom: 10px;      /* Espacio para la línea */
 }
 
+/* GRUPOS DE FORMULARIO - Campos individuales */
 .form-group {
-    margin-bottom: 22px;
-    text-align: left;
+    margin-bottom: 22px;       /* Espacio entre campos */
+    text-align: left;          /* Alinea contenido a la izquierda */
 }
 
+/* Etiquetas de los campos */
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #555;
-    font-size: 0.95rem;
+    display: block;            /* Cada etiqueta en su propia línea */
+    margin-bottom: 8px;        /* Espacio antes del input */
+    font-weight: 600;          /* Semi-negrita */
+    color: #555;               /* Gris medio */
+    font-size: 0.95rem;        /* Ligeramente más pequeño que el estándar */
 }
 
+/* Todos los campos de entrada */
 .form-group input, 
 .form-group select, 
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: #fff;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
+    width: 100%;               /* Ancho completo del contenedor */
+    padding: 12px;             /* Espaciado interno cómodo */
+    border: 1px solid #ddd;    /* Borde gris claro */
+    border-radius: 4px;        /* Esquinas ligeramente redondeadas */
+    font-size: 1rem;           /* Tamaño de fuente estándar */
+    background-color: #fff;    /* Fondo blanco */
+    box-sizing: border-box;    /* Incluye padding y border en el ancho total */
+    transition: border-color 0.3s; /* Transición suave del borde */
 }
 
+/* Estado focus de los campos */
 .form-group input:focus, 
 .form-group select:focus, 
 .form-group textarea:focus {
-    border-color: #f3c507; /* Amarillo */
-    outline: none;
-    box-shadow: 0 0 5px rgba(243, 197, 7, 0.2); /* Sombra amarilla */
+    border-color: #f3c507;     /* Borde amarillo al enfocar */
+    outline: none;             /* Elimina outline predeterminado */
+    box-shadow: 0 0 5px rgba(243, 197, 7, 0.2); /* Resplandor amarillo sutil */
 }
 
+/* Configuración específica del textarea */
 .form-group textarea {
-    resize: vertical;
-    min-height: 120px;
+    resize: vertical;          /* Solo permite redimensionar verticalmente */
+    min-height: 120px;         /* Altura mínima para usabilidad */
 }
 
+/* Estilizado personalizado del select */
 .form-group select {
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 16px;
-    padding-right: 35px;
+    appearance: none;          /* Elimina estilos nativos del navegador */
+    background-repeat: no-repeat; /* No repetir imagen de fondo */
+    background-position: right 10px center; /* Posición para flecha personalizada */
+    background-size: 16px;     /* Tamaño de la flecha */
+    padding-right: 35px;       /* Espacio para la flecha personalizada */
 }
 
+/* Botón de envío del formulario */
 .form-group button {
-    width: 100%;
-    padding: 14px;
-    background-color: #8b2801; /* Marrón rojizo */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    width: 100%;               /* Ancho completo */
+    padding: 14px;             /* Espaciado interno generoso */
+    background-color: #8b2801; /* Fondo marrón rojizo */
+    color: white;              /* Texto blanco */
+    border: none;              /* Sin borde */
+    border-radius: 4px;        /* Esquinas redondeadas */
+    font-size: 1rem;           /* Tamaño estándar */
+    font-weight: 600;          /* Semi-negrita */
+    transition: all 0.3s ease; /* Transición suave para todos los cambios */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px;       /* Espaciado entre letras para elegancia */
 }
 
+/* Estado hover del botón */
 .form-group button:hover {
-    background-color: #a73201; /* Marrón más claro para hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3);
+    background-color: #a73201; /* Marrón más claro */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3); /* Sombra pronunciada */
 }
 
-/* ========== FOOTER ========== */
+/* FOOTER - Pie de página */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    position: static;
-    bottom: 0;
-    width: 100%;
+    background-color: #333;    /* Fondo gris oscuro */
+    color: white;              /* Texto blanco */
+    padding: 10px;             /* Espaciado reducido */
+    position: static;          /* Posición estática (flujo normal) */
+    bottom: 0;                 /* Propiedad sin efecto con position: static */
+    width: 100%;               /* Ancho completo de la pantalla */
 }
 
-/* ========== MEDIA QUERIES ========== */
+/* MEDIA QUERIES - Estilos responsive */
 @media (max-width: 850px) {
+    /* Navegación móvil (si existiera) */
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: center;    /* Centra los elementos */
     }
   
     nav li {
-        margin-right: 0;
-        margin-bottom: 10px;
+        margin-right: 0;        /* Elimina margen derecho */
+        margin-bottom: 10px;    /* Añade margen inferior */
     }
 }
