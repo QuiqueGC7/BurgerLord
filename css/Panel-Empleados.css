@@ -1,6 +1,6 @@
 /* ========== FUENTES ========== */
 @font-face {
-    font-family: 'Lordish';
+    font-family: 'Lordish'; 
     src: url('./Font/Lordish-Regular.ttf') format('truetype');
 }
 
@@ -8,69 +8,69 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    padding: 0; /* Elimina espacios internos por defecto */
+    text-align: center; 
     background-color: #f9f5f0;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
 }
 
 header {
     background-color: #8b2801;
     color: white;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
+    padding: 10px 20px;  /* Espacio interno horizontal y vertical */
+    box-sizing: border-box; /* El padding no afecta el ancho total */
+    display: flex; /* Usa flexbox para centrar contenidos */
+    justify-content: center;  /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidad */
+} 
 
 .titulo {
     font-family: 'Lordish';
     text-align: center;
-    padding: 15px;
+    padding: 15px;  /* Espacio interno alrededor del título */
     font-size: 50px;
-    line-height: 1;
-    margin: 0;
+    line-height: 1; /* Reduce el espaciado entre líneas */
+    margin: 0;   /* Elimina márgenes predeterminados */
 }
 
 /* Botón de inicio/home */
 .home-button {
-    position: absolute;
+    position: absolute; /* Posición fija respecto al contenedor */
     left: 20px;
     background-color: #f3c507;
     color: #8b2801;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    border-radius: 4px;       /* Esquinas redondeadas */
+    text-decoration: none;    /* Elimina subrayado de enlace */
+    font-weight: bold;        /* Texto en negrita para énfasis */
+    transition: all 0.3s ease; /* Suaviza cambios en efectos hover */
+    display: flex;            /* Usa flexbox para alinear contenidos */
+    align-items: center;      /* Centra verticalmente el contenido */
+    gap: 5px;                 /* Espacio entre elementos internos */
 }
 
 .home-button:hover {
     background-color: #ffda44;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Efecto de elevación ligera */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para efecto 3D */
 }
 
 /* ========== ESTILOS ADICIONALES PARA EL PANEL ========== */
 .action-buttons {
-    display: flex;
+    display: flex;  /* Organiza botones horizontalmente */
     justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 20px;                /* Espacio uniforme entre botones */
+    margin: 20px 0;           /* Márgenes superior e inferior */
 }
 
 .action-buttons button {
     padding: 10px 20px;
     background-color: #8b2801;
     color: white;
-    border: none;
-    cursor: pointer;
+    border: none;             /* Elimina bordes predeterminados */
+    cursor: pointer;          /* Cambia el cursor a mano */
     transition: background-color 0.3s;
     border-radius: 5px;
 }
@@ -80,15 +80,15 @@ header {
 }
 
 #burgerTable {
-    width: 90%;
+    width: 90%; /* Ancho casi completo para legibilidad */
     margin: 0 auto;
     border-collapse: collapse;
 }
 
 #burgerTable th, #burgerTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    border: 1px solid #ddd;   /* Bordes claros para delimitar celdas */
+    padding: 8px;             /* Espacio interno para no apiñar contenido */
+    text-align: left;         /* Alinea texto a la izquierda para lectura */
 }
 
 #burgerTable th {
@@ -97,14 +97,14 @@ header {
 
 /* ========== ESTILOS DE MODAL ========== */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    display: none;            /* Inicialmente invisible */
+    position: fixed;          /* Flotante sobre todo el contenido */
+    z-index: 1;               /* Capa por encima del contenido normal */
+    left: 0;                  /* Alineado con borde izquierdo */
+    top: 0;                   /* Alineado con borde superior */
+    width: 100%;              /* Ocupa todo el ancho */
+    height: 100%;             /* Ocupa todo el alto */
+    overflow: auto;           /* Permite desplazamiento si es necesario */
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -120,7 +120,7 @@ header {
 
 .close {
     color: #aaa;
-    float: right;
+    float: right;  /* Posicionado a la derecha */
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -132,37 +132,37 @@ header {
 
 /* ========== ESTILOS DE FORMULARIO ========== */
 input, select {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 100%;              /* Ocupa todo el ancho disponible */
+    padding: 8px;             /* Espacio interno para comodidad */
+    margin: 10px 0;           /* Separación vertical entre campos */
+    box-sizing: border-box;   /* Incluye padding en el cálculo de ancho */
+    border: 1px solid #ddd;   /* Borde sutil gris claro */
+    border-radius: 4px;       /* Esquinas ligeramente redondeadas */
 }
 
 /* ========== ESTILOS DE NOTIFICACIÓN ========== */
-.notification {
-    position: fixed;
+.notification { 
+    position: fixed;  /* Fijo respecto a la ventana */
     top: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Ajuste para centrado exacto */
     background-color: #4CAF50;
     color: white;
     padding: 15px;
-    border-radius: 5px;
-    display: none;
-    z-index: 1000;
+    border-radius: 5px;       /* Esquinas redondeadas */
+    display: none;            /* Inicialmente invisible */
+    z-index: 1000; /* Por encima de todos los elementos */
 }
 
 .export-button {
-    display: block;
-    margin: 20px auto;
+    display: block;           /* Comportamiento de bloque */
+    margin: 20px auto;        /* Centrado horizontal con márgenes */
     padding: 10px 20px;
     background-color: #8b2801;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer; /* Cursor tipo mano */
 }
 
 .export-button:hover {

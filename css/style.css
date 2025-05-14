@@ -8,18 +8,18 @@
 
 /* Estilos generales del cuerpo */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Familia de fuentes para los textos */
+    margin: 0; /* Fuera margenes predeterminados */
+    padding: 0; /* Elimina rellenos internos */
     text-align: center;
-    background-color: #f9f5f0; /* Fondo crema */
+    background-color: #f9f5f0;
     color: #333; /* Color de texto principal */
-    line-height: 1.6;
+    line-height: 1.6; /* Espacio entre lineas de texto */
 }
 
 /* Estilos de imagen generales */
 img {
-    width: 100%;
+    width: 100%; /* ocupar todo el espacio disponible */
     border-radius: 10px;
 }
 
@@ -27,22 +27,22 @@ img {
 header {
     background-color: #8b2801;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Espacio interno (arriba/abajo e izquierda/derecha) */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Permite poner elementos en posicion relativa a esto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
 /* Título principal - Común para todos */
 .titulo {
-    font-family: 'Lordish';
+    font-family: 'Lordish';  /* Fuente creada */
     text-align: center;
-    padding: 15px;
+    padding: 15px; /* Espacio interno */
     font-size: 50px;
-    line-height: 1;
+    line-height: 1; /* Reduce espacio entre lineas de titulos */
     margin: 0;
 }
 
@@ -51,83 +51,82 @@ footer {
     background-color: #333;
     color: white;
     padding: 10px;
-    position: static;
+    position: static;  /* Posicion estatica */
     bottom: 0;
     width: 100%;
 }
 
-/* Menú de usuario - Común para todos */
+/* Boton logeado */
 .user-menu {
     position: relative;
-    display: inline-block;
+    display: inline-block; /* Forma de bloque */
 }
 
 .user-menu-button {
     background-color: #f3c507;
     color: #8b2801;
-    border: none;
+    border: none;  /* Elimina el borde del boton */
     padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
+    cursor: pointer; /* Cambia el cursor a la mano */
+    font-weight: bold; /* Negrita */
     font-size: 14px;
     display: flex;
-    align-items: center;
+    align-items: center;  /* Centrar objetos */
 }
 
 .user-menu-button:after {
-    content: '▼';
+    content: '▼'; /* Añade el simbolo al boton una vez logeado */
     font-size: 10px;
-    margin-left: 5px;
+    margin-left: 5px; /* espacio antes de triangulo */
 }
 
-.dropdown-content {
-    display: none;
+.dropdown-content { /* Desplegables una vez iniciada sesion */
+    display: none; /* Estilo para el desplegable */
     position: absolute;
-    right: 0;
+    right: 0; /* Alinea a la derecha del padre */
     background-color: white;
-    min-width: 160px;
+    min-width: 160px; /* Ancho minimo */
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
-.dropdown-content a {
+.dropdown-content a { /* Desplegables */
     color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: left;
+    text-align: left; /* Alinear texto a la izquierda */
     font-size: 14px;
 }
 
-.dropdown-content a:hover {
+.dropdown-content a:hover { /* Desplegables al pasar el raton */
     background-color: #f9f5f0;
     color: #8b2801;
 }
 
-.user-menu:hover .dropdown-content {
+.user-menu:hover .dropdown-content {  /* Los desplegables */
     display: block;
 }
 
 /* ========== SECCIÓN 2: ESTILOS ESPECÍFICOS PARA INICIO.HTML ========== */
 
 /* Botón de login - Específico para Inicio.html */
-.login-button {
+.login-button {  /* Posicion del boton de login */
     position: absolute;
     top: 50%;
     right: 20px;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* Ajuste verticalmente la posicion */
 }
 
 .btn-login {
     background-color: #f3c507;
     color: #8b2801;
     padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
+    border-radius: 5px;  /* Redondear esquinas boton */
     font-size: 16px;
     font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block;
+    transition: all 0.3s ease; /* Trasicion corta para los cambios */
+    display: inline-block; /* Muestra como bloque */
 }
 
 .btn-login:hover {
@@ -141,9 +140,9 @@ footer {
     color: white;
     padding: 10px 20px;
     font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
+    font-weight: bold; /* Negrita */
+    border: none; /* Sin bordes en el boton */
+    border-radius: 8px; 
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -152,55 +151,55 @@ footer {
 .Carta-boton:hover {
     background-color: #f3c507;
     color: #8b2801;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta el boton */
 }
 
 /* Carrusel de imágenes - Específico para Inicio.html */
 .carrusel-container {
-    max-width: 650px;
-    margin: 20px auto;
+    max-width: 650px; /* Ancho maximo */
+    margin: 20px auto; /* Centra el contenedor */
     position: relative;
 }
 
 .carrusel {
     display: flex;
-    overflow: hidden;
+    overflow: hidden; /* Oculta el contenido que se salga del limite establecido */
 }
 
 .slide {
-    min-width: 100%;
+    min-width: 100%; 
     display: none;
 }
 
 .slide.active {
-    display: block;
+    display: block; /* Muestra diapositiva activa */
 }
 
 .slide img {
-    width: 100%;
+    width: 100%; /* La imagen ocupa todo el ancho de la diapositiva */
 }
 
 .carrusel-btn {
-    position: absolute;
+    position: absolute; /* Posicion fija */
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(139, 40, 1, 0.7);
     color: white;
     border: none;
     padding: 8px 15px;
-    cursor: pointer;
+    cursor: pointer; /* Cambiar el cursor a la mano */
     font-size: 18px;
 }
 
 .prev {
-    left: 10px;
+    left: 10px; /* Boton a la izquierda */
 }
 
 .next {
-    right: 10px;
+    right: 10px; /* Boton a la derecha */
 }
 
-/* Banner de trabajo - Específico para Inicio.html */
+/* Anuncio de trabajo */
 .trabajo-banner {
     background-color: #ff5100;
     margin: 20px auto;
@@ -214,7 +213,7 @@ footer {
 
 .trabajo-banner h2 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Espacio debajo del parrafo */
 }
 
 .trabajo-banner p {
@@ -229,13 +228,14 @@ footer {
     font-weight: bold;
     padding: 10px 25px;
     border-radius: 25px;
-    text-decoration: none;
+    text-decoration: none; /* Elimina el subrayado del enlace */
     font-size: 1rem;
 }
 
 .btn-trabajo:hover {
     background-color: #ffeb3b;
 }
+
 
 /* ========== SECCIÓN 3: ESTILOS PARA BURGERS, COMPLEMENTOS Y MENUS ========== */
 
@@ -245,7 +245,7 @@ footer {
     left: 20px;
     background-color: #f3c507;
     color: #8b2801;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; /* Espacio interior del boton */
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
@@ -257,7 +257,7 @@ footer {
 
 .home-button:hover {
     background-color: #ffda44;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Mueve el boton un poco hacia arriba */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -265,7 +265,7 @@ footer {
 .menu {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Se apilan en varias lineas */
     margin: 20px;
 }
 
