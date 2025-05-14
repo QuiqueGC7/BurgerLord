@@ -20,7 +20,7 @@
         "nombre": "The Hot Menu",
         "descripcion": "Hamburguesa Picapollo + Patatas B&Q + Batido a elegir",
         "precio": 9.50,
-        "imagen": "./Images/HotMenu.png",
+        "imagen": "./Images/HotMENU.png",
         "categoria": "Menu"
     },
     {

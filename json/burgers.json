@@ -1,114 +1,116 @@
-[
-  {
-    "id": 1,
-    "nombre": "Hamburguesa Clásica",
-    "descripcion": "Deliciosa hamburguesa con carne de ternera, lechuga, tomate y queso cheddar.",
-    "precio": 5.99,
-    "imagen": "./Images/Clásica.png",
-    "categoria": "Clasicas"
-  },
-  {
-    "id": 2,
-    "nombre": "Hamburguesa BBQ",
-    "descripcion": "Jugosa hamburguesa con salsa BBQ, aros de cebolla y bacon crujiente.",
-    "precio": 6.99,
-    "imagen": "./Images/BBQ.png",
-    "categoria": "Clasicas"
-  },
-  {
-    "id": 3,
-    "nombre": "Hamburguesa Picapollo",
-    "descripcion": "Para los amantes del pollo: Hamburguesa de pollo, bacon, queso cheddar, jalapeños y salsa de chili rojo.",
-    "precio": 7.49,
-    "imagen": "./Images/Picapollo.png",
-    "categoria": "Clasicas"
-  },
-  {
-    "id": 4,
-    "nombre": "Hamburguesa Pulled Pork",
-    "descripcion": "Sabrosa hamburguesa con cebolla pochada, pulled pork, hamburguesa de ternera, queso y bacon.",
-    "precio": 7.99,
-    "imagen": "./Images/PulledPork.png",
-    "categoria": "Clasicas"
-  },
-  {
-    "id": 5,
-    "nombre": "Hamburguesa Gluten Free",
-    "descripcion": "Con carne de res, queso cheddar, tomate, lechuga y cebolla caramelizada. Apta para intolerantes al gluten.",
-    "precio": 6.49,
-    "imagen": "./Images/Gluten.png",
-    "categoria": "Clasicas"
-  },
-  {
-    "id": 6,
-    "nombre": "Hamburguesa Bacon Lovers",
-    "descripcion": "Extra de bacon para los verdaderos fans. ¡Irresistible!",
-    "precio": 6.99,
-    "imagen": "./Images/BaconLovers.png",
-    "categoria": "Clasicas"
-  },
-  {
-    "id": 7,
-    "nombre": "Hamburguesa Vegan Pleasure",
-    "descripcion": "Opción 100% vegetal con ingredientes frescos y sabrosos.",
-    "precio": 7.49,
-    "imagen": "./Images/Vegana.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 8,
-    "nombre": "Hamburguesa Marítima",
-    "descripcion": "Filete de pescado crujiente, tomate, lechuga fresca y salsa tártara.",
-    "precio": 7.99,
-    "imagen": "./Images/Maritima.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 9,
-    "nombre": "Hamburguesa Friedstastic",
-    "descripcion": "Hamburguesa de res frita, pimiento rojo y queso feta.",
-    "precio": 7.59,
-    "imagen": "./Images/FriedStatick.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 10,
-    "nombre": "Hamburguesa Chef Alba's Burger",
-    "descripcion": "Hamburguesa de ternera con mermelada de tomate, cebolla caramelizada, rulo de cabra y trufa en polvo.",
-    "precio": 8.49,
-    "imagen": "./Images/Alba.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 11,
-    "nombre": "Hamburguesa La Soberana",
-    "descripcion": "Doble smash patty de res, panceta crujiente y pulled pork glaseado con bourbon BBQ.",
-    "precio": 8.99,
-    "imagen": "./Images/La soberana.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 12,
-    "nombre": "Hamburguesa Taco Burger",
-    "descripcion": "Carne sazonada estilo taco, con quesos cheddar y Monterey Jack, tortilla crujiente y salsa casera.",
-    "precio": 8.49,
-    "imagen": "./Images/TacoBurger.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 13,
-    "nombre": "Hamburguesa Pizzabomba",
-    "descripcion": "Carne sazonada con especias italianas, mozzarella, salsa marinara y aceite picante.",
-    "precio": 8.29,
-    "imagen": "./Images/Pizzabomba.png",
-    "categoria": "Especiales"
-  },
-  {
-    "id": 14,
-    "nombre": "Hamburguesa Pepe Roni",
-    "descripcion": "Con pepperoni, mozzarella fundida y un toque especiado estilo pizza.",
-    "precio": 7.99,
-    "imagen": "./Images/Pepperoni.png",
-    "categoria": "Especiales"
-  }
-]
+
+  [
+    {
+      "id": 1,
+      "nombre": "Hamburguesa Clásica",
+      "descripcion": "Deliciosa hamburguesa con carne de ternera, lechuga, tomate y queso cheddar.",
+      "precio": 5.99,
+      "imagen": "./Images/Clásica.png",
+      "categoria": "Clasicas"
+      
+    },
+    {
+      "id": 2,
+      "nombre": "Hamburguesa BBQ",
+      "descripcion": "Jugosa hamburguesa con salsa BBQ, aros de cebolla y bacon crujiente.",
+      "precio": 6.99,
+      "imagen": "./Images/BBQ.png",
+      "categoria": "Clasicas"
+    },
+    {
+      "id": 3,
+      "nombre": "Hamburguesa Picapollo",
+      "descripcion": "Para los amantes del pollo: Hamburguesa de pollo, bacon, queso cheddar, jalapeños y salsa de chili rojo.",
+      "precio": 7.49,
+      "imagen": "./Images/Picapollo.png",
+      "categoria": "Clasicas"
+    },
+    {
+      "id": 4,
+      "nombre": "Hamburguesa Pulled Pork",
+      "descripcion": "Sabrosa hamburguesa con cebolla pochada, pulled pork, hamburguesa de ternera, queso y bacon.",
+      "precio": 7.99,
+      "imagen": "./Images/PulledPork.png",
+      "categoria": "Clasicas"
+    },
+    {
+      "id": 5,
+      "nombre": "Hamburguesa Gluten Free",
+      "descripcion": "Tranquilos intolerantes al gluten aquí llega vuestra hamburguesa, con carne de res, queso cheddar, tomate, lechuga y cebolla caramelizada.",
+      "precio": 6.49,
+      "imagen": "./Images/Gluten.png",
+      "categoria": "Clasicas"
+    },
+    {
+      "id": 6,
+      "nombre": "Hamburguesa Bacon Lovers",
+      "descripcion": "Extra de bacon para los verdaderos fans. ¡Irresistible!",
+      "precio": 6.99,
+      "imagen": "./Images/BaconLovers.png",
+      "categoria": "Clasicas"
+    },
+    {
+      "id": 7,
+      "nombre": "Hamburguesa Vegan Pleasure",
+      "descripcion": "Opción 100% vegetal con ingredientes frescos y sabrosos.",
+      "precio": 7.49,
+      "imagen": "./Images/Vegana.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 8,
+      "nombre": "Hamburguesa Marítima",
+      "descripcion": "El mar llega a tu hamburguesa, Filete de pescado crujiente, tomate, lechuga fresca y salsa tártara.",
+      "precio": 7.99,
+      "imagen": "./Images/Maritima.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 9,
+      "nombre": "Hamburguesa Friedstastic",
+      "descripcion": "Hamburguesa de res frita, pimiento rojo y queso feta.",
+      "precio": 7.59,
+      "imagen": "./Images/FriedStatick.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 10,
+      "nombre": "Hamburguesa Chef Alba's Burger",
+      "descripcion": "Hamburguesa de ternera con mermelada de tomate, cebolla caramelizada, rulo de cabra y trufa en polvo.",
+      "precio": 8.49,
+      "imagen": "./Images/Alba.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 11,
+      "nombre": "Hamburguesa La Soberana",
+      "descripcion": "Doble smash patty de res, panceta crujiente y pulled pork glaseado con bourbon BBQ.",
+      "precio": 8.99,
+      "imagen": "./Images/La soberana.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 12,
+      "nombre": "Hamburguesa Taco Burger",
+      "descripcion": "TACOBURGUER WEEEY, Carne sazonada estilo taco, con quesos cheddar y Monterey Jack, tortilla crujiente y salsa casera.",
+      "precio": 8.49,
+      "imagen": "./Images/TacoBurger.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 13,
+      "nombre": "Hamburguesa Pizzabomba",
+      "descripcion": "Explosión de sabor al puro estilo italiano, Carne sazonada con especias italianas, mozzarella, salsa marinara y aceite picante.",
+      "precio": 8.29,
+      "imagen": "./Images/Pizzabomba.png",
+      "categoria": "Especiales"
+    },
+    {
+      "id": 14,
+      "nombre": "Hamburguesa Pepe Roni",
+      "descripcion": "Con pepperoni, mozzarella fundida y un toque especiado estilo pizza.",
+      "precio": 7.99,
+      "imagen": "./Images/Pepperoni.png",
+      "categoria": "Especiales"
+    }
+  ]  
