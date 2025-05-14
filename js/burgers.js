@@ -52,6 +52,7 @@ function renderizarMenu(data) {
             <h3>${item.nombre}</h3>
             <p>${item.descripcion}</p>
             <strong>$${item.precio.toFixed(2)}</strong>
+            <ol></ol>
             <button class="btn-agregar" onclick="agregarAlCarrito(${item.id})">
                 🛒 Añadir al carrito
             </button>
