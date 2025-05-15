@@ -10,7 +10,7 @@
     {
       "id": 16,
       "nombre": "Patatas Deluxe",
-      "descripcion": "Patatas Deluxe, patatas al estilo gajo",
+      "descripcion": "Patatas Deluxe",
       "precio": 1.49,
       "imagen": "./Images/PatatasDeluxe.png",
       "categoria": "Patatas"
@@ -21,8 +21,7 @@
       "descripcion": "Deliciosas patatas con queso fundido y trozos de bacon",
       "precio": 1.95,
       "imagen": "./Images/PatatasB&Q.png",
-      "categoria": "Patatas",
-      " ": " "
+      "categoria": "Patatas"
     },
     {
       "id": 18,
@@ -59,7 +58,7 @@
     {
       "id": 22,
       "nombre": "Batido de Chocolate",
-      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger. ¡Sabor CHOCOLATEEE!",
+      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger.",
       "precio": 3.49,
       "imagen": "./Images/BatidoChocolate.png",
       "categoria": "Batidos"
@@ -67,7 +66,7 @@
     {
       "id": 23,
       "nombre": "Batido de Fresa",
-      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger. ¡Es rosa y sabe a fresa!",
+      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger.",
       "precio": 3.49,
       "imagen": "./Images/BatidoFresa.png",
       "categoria": "Batidos"
@@ -75,7 +74,7 @@
     {
       "id": 24,
       "nombre": "Batido de Vainilla",
-      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger. ¡No es minecraft vanilla pero tambien esta bueno!",
+      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger.",
       "precio": 3.49,
       "imagen": "./Images/BatidoVainilla.png",
       "categoria": "Batidos"
@@ -91,7 +90,7 @@
     {
       "id": 26,
       "nombre": "Helado de Fresa",
-      "descripcion": "Es rosa y sabe a fresa",
+      "descripcion": "Es rosa y sabe y a fresa",
       "precio": 3.49,
       "imagen": "./Images/GelatoFresa.png",
       "categoria": "Helados"

@@ -1,5 +1,5 @@
-// Cargar los datos del JSON de complementos
-fetch('./json/complementos.json')
+// Cargar los datos del JSON de menus
+fetch('./json/menus.json')
   .then(res => {
     if (!res.ok) throw new Error("Error de red");
     return res.json();
@@ -10,7 +10,7 @@ fetch('./json/complementos.json')
     data.forEach(item => {
       if (item.categoria !== currentCategory) {
         currentCategory = item.categoria;
-        container.innerHTML += `<section class="categoria"> ${currentCategory}</section>`;
+        container.innerHTML += `<section class="categoria">menus ${currentCategory}</section>`;
       }
       container.innerHTML += `
         <div class="menu-item">
@@ -22,7 +22,8 @@ fetch('./json/complementos.json')
     });
   })
   .catch(err => console.error("Error al cargar el menú:", err));
-  // Inicializar el carrito desde localStorage o crear uno vacío
+  
+// Inicializar el carrito desde localStorage o crear uno vacío
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 // Función para renderizar el menú
@@ -38,15 +39,15 @@ function renderizarMenu(data) {
             currentCategory = item.categoria;
             const categoriaHeader = document.createElement('section');
             categoriaHeader.className = 'categoria';
-            categoriaHeader.textContent = `Complementos ${currentCategory}`;
+            categoriaHeader.textContent = `Menus ${currentCategory}`;
             menuContainer.appendChild(categoriaHeader);
         }
         
-        // Crear tarjeta de complementos
-        const burgerCard = document.createElement('div');
-        burgerCard.className = 'menu-item';
+        // Crear tarjeta del menu
+        const menuCard = document.createElement('div');
+        menuCard.className = 'menu-item';
         
-        burgerCard.innerHTML = `
+        menuCard.innerHTML = `
             <img src="${item.imagen}" alt="${item.nombre}" id="${item.id}">
             <h3>${item.nombre}</h3>
             <p>${item.descripcion}</p>
@@ -57,24 +58,24 @@ function renderizarMenu(data) {
             </button>
         `;
         
-        menuContainer.appendChild(burgerCard);
+        menuContainer.appendChild(menuCard);
     });
 }
 
 // Función para agregar al carrito
-function agregarAlCarrito(burgerId) {
-    const itemExistente = carrito.find(item => item.id === complementoId);
+function agregarAlCarrito(menusId) {
+    const itemExistente = carrito.find(item => item.id === menusId);
     
     if (itemExistente) {
         itemExistente.cantidad += 1;
     } else {
-        // Encontrar la hamburguesa en los datos cargados
-        const burger = window.burgersData.find(b => b.id === complementoId);
-        if (burger) {
+        // Encontrar el menu en los datos cargados
+        const menus = window.menusData.find(b => b.id === menusId);
+        if (menus) {
             carrito.push({
-                id: burger.id,
-                nombre: burger.nombre,
-                precio: burger.precio,
+                id: menus.id,
+                nombre: menus.nombre,
+                precio: menus.precio,
                 cantidad: 1
             });
         }
@@ -84,18 +85,18 @@ function agregarAlCarrito(burgerId) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     
     // Mostrar confirmación
-    alert('Complemento añadido al carrito');
+    alert('Menu añadido al carrito');
 }
 
 // Cargar los datos del JSON de hamburguesas
-fetch('./json/complementos.json')
+fetch('./json/menus.json')
     .then(res => {
         if (!res.ok) throw new Error("Error de red");
         return res.json();
     })
     .then(data => {
         // Guardar los datos para usarlos en otras funciones
-        window.complementosData = data;
+        window.menusData = data;
         // Renderizar el menú con los botones del carrito
         renderizarMenu(data);
     })

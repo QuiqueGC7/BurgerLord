@@ -13,9 +13,6 @@ body {
     background-color: #f9f5f0; /* Cambiado a fondo crema */
     color: #333; /* Color de texto principal */
     line-height: 1.6;
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
-    display: flex; /* Habilita flexbox */
-    flex-direction: column; /* Organiza elementos en columna */
 }
 
 /*Empieza el header*/
@@ -37,29 +34,6 @@ header {
     font-size: 50px;
     line-height: 0;
 }
-
-.home-button {
-    position: absolute;
-    left: 20px;
-    background-color: #f3c507;    /* Amarillo dorado */
-    color: #8b2801;               /* Texto marrón rojizo */
-    padding: 0.3rem 0.7rem;       /* Espaciado compacto */
-    border-radius: 4px;           /* Esquinas ligeramente redondeadas */
-    text-decoration: none;        /* Elimina subrayado del link */
-    font-weight: bold;            /* Texto en negrita */
-    transition: all 0.3s ease;    /* Animación suave */
-    display: flex;                /* Contenedor flexible */
-    align-items: center;          /* Centra verticalmente el contenido */
-    gap: 5px;                     /* Espacio entre ícono y texto */
-    font-size: 16px;              /* Tamaño de fuente estándar */
-}
-
-.home-button:hover {/* Al pasar el mouse, se mueve ligeramente hacia arriba y cambia de color */
-    background-color: #ffda44;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
 
 /* Navegación */
 nav {
@@ -93,50 +67,48 @@ main {
     justify-content: center;
     align-items: center;
     padding: 30px 0;
-    min-height: calc(100vh - 140px); /* Altura mínima ajustada restando header y footer */
 }
 
 .login-container {
     background-color: white;
     border: 1px solid #ddd;
-    padding: 40px;
+    padding: 25px;
     width: 100%;
-    max-width: 500px;
+    max-width: 360px;
     text-align: left;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    margin: auto; /* Centra el contenedor horizontalmente */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h2 {
     color: #8b2801; /* Cambiado a marrón rojizo */
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 24px;
+    margin-bottom: 20px;
     text-align: center;
-    padding-bottom: 0.8rem;
-    border-bottom: 3px solid #f3c507; /* Añadido borde amarillo */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f3c507; /* Añadido borde amarillo */
 }
 
 /* Formulario */
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 14px;
+    margin-bottom: 5px;
     color: #555; /* Cambiado a gris medio de la paleta */
     font-weight: 600;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid #ddd;
-    font-size: 16px;
+    font-size: 14px;
     box-sizing: border-box;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
 .form-group input:focus {
@@ -150,12 +122,12 @@ main {
     background-color: #8b2801; /* Cambiado a marrón rojizo */
     color: white;
     border: none;
-    padding: 14px;
+    padding: 10px;
     width: 100%;
-    font-size: 18px;
+    font-size: 14px;
     cursor: pointer;
-    margin-top: 10px;
-    border-radius: 6px;
+    margin-top: 5px;
+    border-radius: 4px;
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -166,47 +138,12 @@ main {
     box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3);
 }
 
-/* Añadido para los links */
-.form-footer {
-    margin-top: 25px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.form-footer p {
-    margin: 10px 0;
-}
-
-.form-footer a {
-    color: #8b2801;
-    text-decoration: none;
-}
-
-.form-footer a:hover {
-    text-decoration: underline;
-}
-
 /*El footer*/
 footer {
     background-color: #333; /* Mantenido el gris oscuro */
     color: white;
     padding: 10px;
+    position: static;
+    bottom: 0;
     width: 100%;
-}
-@media screen and (max-width: 600px) {
-    .home-button {
-        position: static; /* Elimina posicionamiento absoluto */
-        margin: 10px auto 0; /* Margen superior e inferior, centrado horizontalmente */
-        order: 1; /* Asegura que aparezca después del título */
-    }
-    
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centra los elementos del header */
-    }
-    
-    .titulo {
-        margin-bottom: 0; /* Elimina margen inferior del título */
-    }
 }

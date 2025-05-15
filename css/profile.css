@@ -1,5 +1,5 @@
 /* RESET BÁSICO - Estilos base del documento */
-body {
+   body {
     margin: 0;                /* Elimina márgenes predeterminados del navegador */
     padding: 0;               /* Elimina padding predeterminado del navegador */
     background-color: #f9f5f0; /* Color de fondo crema suave para toda la página */
@@ -86,7 +86,6 @@ header {
     border-radius: 8px;       /* Esquinas redondeadas */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para elevación */
     overflow: hidden;         /* Oculta contenido que sobresalga (importante para el header) */
-    margin-bottom: 2rem;      /* Margen inferior entre tarjetas */
 }
 
 /* ENCABEZADO DE LA TARJETA - Sección superior */
@@ -210,34 +209,6 @@ footer {
     font-size: 0.9rem;        /* Texto ligeramente más pequeño */
 }
 
-/* DATOS DEL CLIENTE - Estilos para los datos del perfil */
-.customer-data {
-    padding: 1rem;
-    background-color: #f8f8f8;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.data-row {
-    display: flex;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #ececec;
-}
-
-.data-row:last-child {
-    border-bottom: none;
-}
-
-.data-label {
-    font-weight: 600;
-    width: 30%;
-    color: #666;
-}
-
-.data-value {
-    width: 70%;
-}
-
 /* RESPONSIVE - Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     /* Ajusta el título para móviles */
@@ -258,18 +229,5 @@ footer {
     /* Botón guardar a ancho completo */
     .save-button {
         width: 100%;          /* Ocupa todo el ancho en móviles */
-    }
-    
-    /* Ajustar fila de datos en móvil */
-    .data-row {
-        flex-direction: column;
-    }
-    
-    .data-label, .data-value {
-        width: 100%;
-    }
-    
-    .data-value {
-        margin-top: 0.25rem;
     }
 }
