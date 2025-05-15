@@ -36,7 +36,7 @@
     {
       "id": 5,
       "nombre": "Hamburguesa Gluten Free",
-      "descripcion": "Con carne de res, queso cheddar, tomate, lechuga y cebolla caramelizada. Apta para intolerantes al gluten.",
+      "descripcion": "Tranquilos intolerantes al gluten aquí llega vuestra hamburguesa, con carne de res, queso cheddar, tomate, lechuga y cebolla caramelizada.",
       "precio": 6.49,
       "imagen": "./Images/Gluten.png",
       "categoria": "Clasicas"
@@ -60,7 +60,7 @@
     {
       "id": 8,
       "nombre": "Hamburguesa Marítima",
-      "descripcion": "Filete de pescado crujiente, tomate, lechuga fresca y salsa tártara.",
+      "descripcion": "El mar llega a tu hamburguesa, Filete de pescado crujiente, tomate, lechuga fresca y salsa tártara.",
       "precio": 7.99,
       "imagen": "./Images/Maritima.png",
       "categoria": "Especiales"
@@ -92,7 +92,7 @@
     {
       "id": 12,
       "nombre": "Hamburguesa Taco Burger",
-      "descripcion": "Carne sazonada estilo taco, con quesos cheddar y Monterey Jack, tortilla crujiente y salsa casera.",
+      "descripcion": "TACOBURGUER WEEEY, Carne sazonada estilo taco, con quesos cheddar y Monterey Jack, tortilla crujiente y salsa casera.",
       "precio": 8.49,
       "imagen": "./Images/TacoBurger.png",
       "categoria": "Especiales"
@@ -100,7 +100,7 @@
     {
       "id": 13,
       "nombre": "Hamburguesa Pizzabomba",
-      "descripcion": "Carne sazonada con especias italianas, mozzarella, salsa marinara y aceite picante.",
+      "descripcion": "Explosión de sabor al puro estilo italiano, Carne sazonada con especias italianas, mozzarella, salsa marinara y aceite picante.",
       "precio": 8.29,
       "imagen": "./Images/Pizzabomba.png",
       "categoria": "Especiales"
