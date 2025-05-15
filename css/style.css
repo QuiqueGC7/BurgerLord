@@ -300,9 +300,10 @@ footer {
     }
     
     /* Ajustes responsivos para botones */
-    .home-button {
-        font-size: 14px;
-        padding: 0.4rem 0.8rem;
+      .home-button {
+        position: static; /* Elimina posicionamiento absoluto */
+        margin: 10px auto 0; /* Margen superior e inferior, centrado horizontalmente */
+        order: 1; /* Asegura que aparezca después del título */
     }
     
     .login-button {
