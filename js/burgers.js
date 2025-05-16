@@ -102,4 +102,4 @@ window.addEventListener('storage', (e) => {
     if (e.key === 'carrito') {
         actualizarContadorCarrito();
     }
-});
+}); 

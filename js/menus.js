@@ -1,30 +1,6 @@
-// Cargar los datos del JSON de menus
-fetch('./json/menus.json')
-  .then(res => {
-    if (!res.ok) throw new Error("Error de red");
-    return res.json();
-  })
-  .then(data => {
-    const container = document.getElementById('menu-container');
-    let currentCategory = '';
-    data.forEach(item => {
-      if (item.categoria !== currentCategory) {
-        currentCategory = item.categoria;
-        container.innerHTML += `<section class="categoria">menus ${currentCategory}</section>`;
-      }
-      container.innerHTML += `
-        <div class="menu-item">
-          <img src="${item.imagen}" alt="${item.nombre}" id="${item.id}">
-          <h3>${item.nombre}</h3>
-          <p>${item.descripcion}</p>
-          <strong>$${item.precio.toFixed(2)}</strong>
-        </div>`;
-    });
-  })
-  .catch(err => console.error("Error al cargar el menú:", err));
-  
 // Inicializar el carrito desde localStorage o crear uno vacío
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let menusData = [];
 
 // Función para renderizar el menú
 function renderizarMenu(data) {
@@ -43,11 +19,11 @@ function renderizarMenu(data) {
             menuContainer.appendChild(categoriaHeader);
         }
         
-        // Crear tarjeta del menu
-        const menuCard = document.createElement('div');
-        menuCard.className = 'menu-item';
+        // Crear tarjeta de hamburguesa
+        const burgerCard = document.createElement('div');
+        burgerCard.className = 'menu-item';
         
-        menuCard.innerHTML = `
+        burgerCard.innerHTML = `
             <img src="${item.imagen}" alt="${item.nombre}" id="${item.id}">
             <h3>${item.nombre}</h3>
             <p>${item.descripcion}</p>
@@ -58,19 +34,22 @@ function renderizarMenu(data) {
             </button>
         `;
         
-        menuContainer.appendChild(menuCard);
+        menuContainer.appendChild(burgerCard);
     });
 }
 
 // Función para agregar al carrito
-function agregarAlCarrito(menusId) {
-    const itemExistente = carrito.find(item => item.id === menusId);
+function agregarAlCarrito(menuId) {
+    // Obtener el carrito más reciente de localStorage
+    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+    const itemExistente = carrito.find(item => item.id === menuId);
     
     if (itemExistente) {
         itemExistente.cantidad += 1;
     } else {
-        // Encontrar el menu en los datos cargados
-        const menus = window.menusData.find(b => b.id === menusId);
+        // Encontrar la hamburguesa en los datos cargados
+        const menus = menusData.find(b => b.id === menuId);
         if (menus) {
             carrito.push({
                 id: menus.id,
@@ -84,8 +63,22 @@ function agregarAlCarrito(menusId) {
     // Guardar en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
     
-    // Mostrar confirmación
-    alert('Menu añadido al carrito');
+    // Mostrar confirmación con opción de ir al carrito
+    if (confirm('Hamburguesa añadida al carrito. ¿Quieres ver tu carrito?')) {
+        window.location.href = 'Carrito.html';
+    }
+}
+
+// Función para mostrar el contador del carrito
+function actualizarContadorCarrito() {
+    carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+    
+    // Si existe un elemento contador en la página, actualizarlo
+    const contador = document.getElementById('contador-carrito');
+    if (contador) {
+        contador.textContent = totalItems;
+    }
 }
 
 // Cargar los datos del JSON de hamburguesas
@@ -96,8 +89,17 @@ fetch('./json/menus.json')
     })
     .then(data => {
         // Guardar los datos para usarlos en otras funciones
-        window.menusData = data;
+        menusData = data;
         // Renderizar el menú con los botones del carrito
         renderizarMenu(data);
+        // Actualizar contador
+        actualizarContadorCarrito();
     })
     .catch(err => console.error("Error al cargar el menú:", err));
+
+// Actualizar el contador cuando cambie el localStorage
+window.addEventListener('storage', (e) => {
+    if (e.key === 'carrito') {
+        actualizarContadorCarrito();
+    }
+}); 
