@@ -1,16 +1,16 @@
 [
     {
         "id": 15,
-        "nombre": "Menú Clasico",
-        "descripcion": "Hamburguesa Clásica + Patatas Fritas + Bebida a elegir",
+        "nombre": "Clasic Menu",
+        "descripcion": "Classic Burger + Fries + Choice of beverage",
         "precio": 8.20,
         "imagen": "./Images/MenuClásico.png",
         "categoria": "Menu"
     },
     {
         "id": 15,
-        "nombre": "Menú Eleccion del chef",
-        "descripcion": "Chef Alba's Burger + Patatas Deluxe + Batido de Chocolate",
+        "nombre": "Chef's election menu",
+        "descripcion": "Chef Alba's Burger + Deluxe fries + Chocolate Milkshake",
         "precio": 10.45,
         "imagen": "./Images/Alba_Menu.png",
         "categoria": "Menu"
@@ -18,7 +18,7 @@
     {
         "id": 15,
         "nombre": "The Hot Menu",
-        "descripcion": "Hamburguesa Picapollo + Patatas B&Q + Batido a elegir",
+        "descripcion": "Picapollo Burger + B&Q Fries + Shake of your choice",
         "precio": 9.50,
         "imagen": "./Images/HotMENU.png",
         "categoria": "Menu"
@@ -26,7 +26,7 @@
     {
         "id": 15,
         "nombre": "Menú LaMar",
-        "descripcion": "Hambuguesa Marítima + Patatas a elegir + Bebida,Helado o Batido a elegir",
+        "descripcion": "Maritime Burger + Fries of your choice + Beverage, Ice Cream or Milkshake of your choice",
         "precio": 9.50,
         "imagen": "./Images/MenuLaMar.png",
         "categoria": "Menu"
@@ -34,7 +34,7 @@
     {
         "id": 15,
         "nombre": "Frilord Menu",
-        "descripcion": "Hambuguesa Friting + Patatas Patatas Fritas + Bebida,Helado o Batido a elegir",
+        "descripcion": "Friting Burger + Potato Fries + Drink, Ice Cream or Milkshake of your choice",
         "precio": 9.50,
         "imagen": "./Images/FriLordMenu.png",
         "categoria": "Menu"

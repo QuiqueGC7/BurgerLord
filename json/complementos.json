@@ -1,24 +1,24 @@
 [
     {
       "id": 15,
-      "nombre": "Patatas Fritas",
-      "descripcion": "Unas patatas fritas combinan con todo",
+      "nombre": "Fries",
+      "descripcion": "Fries go with everything",
       "precio": 1.49,
       "imagen": "./Images/PatatasFritas.png",
       "categoria": "Patatas"
     },
     {
       "id": 16,
-      "nombre": "Patatas Deluxe",
-      "descripcion": "Patatas Deluxe, patatas al estilo gajo",
+      "nombre": "Deluxe fries",
+      "descripcion": "Deluxe fries, wedge style potatoes",
       "precio": 1.49,
       "imagen": "./Images/PatatasDeluxe.png",
       "categoria": "Patatas"
     },
     {
       "id": 17,
-      "nombre": "PatatasB&Q",
-      "descripcion": "Deliciosas patatas con queso fundido y trozos de bacon",
+      "nombre": "B&Q fries",
+      "descripcion": "Delicious potatoes with melted cheese and bacon chunks",
       "precio": 1.95,
       "imagen": "./Images/PatatasB&Q.png",
       "categoria": "Patatas",
@@ -26,16 +26,16 @@
     },
     {
       "id": 18,
-      "nombre": "Fanta de limón",
-      "descripcion": "Una fanta de limon fresquita",
+      "nombre": "Lemon Fanta",
+      "descripcion": "A fresh lemon fanta",
       "precio": 2.49,
       "imagen": "./Images/FantaLimon.png",
       "categoria": "Bebidas"
     },
     {
       "id": 19,
-      "nombre": "Fanta de naranja",
-      "descripcion": "Una fanta de naranja fresquita",
+      "nombre": "Orange Fanta",
+      "descripcion": "A fresh orange fanta",
       "precio": 2.49,
       "imagen": "./Images/FantaN.png",
       "categoria": "Bebidas"
@@ -43,7 +43,7 @@
     {
       "id": 20,
       "nombre": "CocaCola",
-      "descripcion": "Coca con cola",
+      "descripcion": "A fresh CocaCola",
       "precio": 2.49,
       "imagen": "./Images/CocaCola.png",
       "categoria": "Bebidas"
@@ -51,55 +51,55 @@
     {
       "id": 21,
       "nombre": "Lipton",
-      "descripcion": "Un buen te de limon nunca biene mal",
+      "descripcion": "A good lemon tea is never a bad thing.",
       "precio": 2.49,
       "imagen": "./Images/Lipton.png",
       "categoria": "Bebidas"
     },
     {
       "id": 22,
-      "nombre": "Batido de Chocolate",
-      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger. ¡Sabor CHOCOLATEEE!",
+      "nombre": "Chocolate Milkshake",
+      "descripcion": "Creamy, cold and perfect with any burger, CHOCOLATEEE FLAVOUR!",
       "precio": 3.49,
       "imagen": "./Images/BatidoChocolate.png",
       "categoria": "Batidos"
     },
     {
       "id": 23,
-      "nombre": "Batido de Fresa",
-      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger. ¡Es rosa y sabe a fresa!",
+      "nombre": "Strawberry milkshake",
+      "descripcion": "Creamy, cold and perfect with any burger, CHOCOLATEEE flavor! It's pink and tastes like strawberry!",
       "precio": 3.49,
       "imagen": "./Images/BatidoFresa.png",
       "categoria": "Batidos"
     },
     {
       "id": 24,
-      "nombre": "Batido de Vainilla",
-      "descripcion": "Cremoso, frío y perfecto para acompañar cualquier burger. ¡No es minecraft vanilla pero tambien esta bueno!",
+      "nombre": "Vanilla Milkshake",
+      "descripcion": "Creamy, cold and perfect with any burger, CHOCOLATEEE flavor! It's not minecraft vanilla but it's good too!",
       "precio": 3.49,
       "imagen": "./Images/BatidoVainilla.png",
       "categoria": "Batidos"
     },
     {
       "id": 25,
-      "nombre": "Helado de Chocolate",
-      "descripcion": "Un clasico entre clasicos",
+      "nombre": "Chocolate Ice Cream",
+      "descripcion": "Just a clasic.",
       "precio": 3.49,
       "imagen": "./Images/HeladoChocolate.png",
       "categoria": "Helados"
     },
     {
       "id": 26,
-      "nombre": "Helado de Fresa",
-      "descripcion": "Es rosa y sabe a fresa",
+      "nombre": "Strawberry Ice Cream",
+      "descripcion": "It's pink and tastes like strawberry!",
       "precio": 3.49,
       "imagen": "./Images/GelatoFresa.png",
       "categoria": "Helados"
     },
     {
       "id": 27,
-      "nombre": "Helado de Vainilla",
-      "descripcion": "Da igual que sea simple si esta buenisimo",
+      "nombre": "Vanilla Ice Cream",
+      "descripcion": "It doesn't matter if it's simple if it's delicious.",
       "precio": 3.49,
       "imagen": "./Images/GelatoVainilla.png",
       "categoria": "Helados"
