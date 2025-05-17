@@ -24,7 +24,7 @@ async function loadInitialData() {
         
         if (storedBurgers) {
             burgers = JSON.parse(storedBurgers);
-            console.log('Datos cargados desde localStorage');
+            console.log('Data uploaded from localStorage');
             renderTable();
             populateSelects();
             return;
@@ -33,11 +33,11 @@ async function loadInitialData() {
         // Si no hay datos en localStorage, carga desde el archivo JSON
         const response = await fetch('./json/burgers.json');
         if (!response.ok) {
-            throw new Error(`Error al cargar el archivo JSON: ${response.status}`);
+            throw new Error(`Error downloading archivo JSON: ${response.status}`);
         }
         
         burgers = await response.json();
-        console.log('Datos cargados desde burgers.json');
+        console.log('Data uploaded from burgers.json');
         
         // Guarda en localStorage para uso futuro
         localStorage.setItem('burgers', JSON.stringify(burgers));
@@ -46,8 +46,8 @@ async function loadInitialData() {
         populateSelects();
     } catch (error) {
         // Maneja errores en la carga de datos
-        console.error('Error al cargar los datos:', error);
-        showNotification('Error al cargar los datos.');
+        console.error('Error dowloading the data:', error);
+        showNotification('Error downloading the data.');
         
         // Iniciamos con un array vacío en caso de error
         burgers = [];
@@ -63,7 +63,7 @@ function saveBurgers() {
     localStorage.setItem('burgers', JSON.stringify(burgers));
     renderTable();
     populateSelects();
-    showNotification('Cambios guardados');
+    showNotification('Changes saved');
 }
 
 // Actualiza la tabla con los datos actuales
@@ -85,7 +85,7 @@ function populateSelects() {
     const selects = ['#editProductSelect', '#deleteProductSelect'];
     selects.forEach(selector => {
         const select = $(selector);
-        select.innerHTML = '<option value="">Seleccionar Producto</option>';
+        select.innerHTML = '<option value="">Select Product</option>';
         burgers.forEach(burger => {
             select.innerHTML += `<option value="${burger.id}">${burger.nombre}</option>`;
         });
@@ -144,7 +144,7 @@ $('#addForm').addEventListener('submit', function(e) {
     const precio = parseFloat($('#addPrecio').value);
     
     if (!nombre || !descripcion || isNaN(precio) || precio <= 0) {
-        showNotification('Por favor complete todos los campos correctamente');
+        showNotification('Please complete all the gaps.');
         return;
     }
     
@@ -176,13 +176,13 @@ $('#editForm').addEventListener('submit', function(e) {
     
     const selectedId = parseInt($('#editProductSelect').value);
     if (!selectedId) {
-        showNotification('Por favor seleccione un producto para editar');
+        showNotification('Please select a producto to edit.');
         return;
     }
     
     const burgerIndex = burgers.findIndex(b => b.id === selectedId);
     if (burgerIndex === -1) {
-        showNotification('Producto no encontrado');
+        showNotification('Prooduct not found');
         return;
     }
     
@@ -211,12 +211,12 @@ $('#deleteForm').addEventListener('submit', function(e) {
     
     const selectedId = parseInt($('#deleteProductSelect').value);
     if (!selectedId) {
-        showNotification('Por favor seleccione un producto para eliminar');
+        showNotification('Select a product to delete.');
         return;
     }
     
     // Pide confirmación antes de eliminar
-    const confirmDelete = confirm(`¿Está seguro que desea eliminar "${burgers.find(b => b.id === selectedId)?.nombre}"?`);
+    const confirmDelete = confirm(`Sure you want to delete "${burgers.find(b => b.id === selectedId)?.nombre}"?`);
     if (!confirmDelete) return;
     
     const index = burgers.findIndex(b => b.id === selectedId);
@@ -225,7 +225,7 @@ $('#deleteForm').addEventListener('submit', function(e) {
         saveBurgers();
         closeModal('deleteModal');
     } else {
-        showNotification('Producto no encontrado');
+        showNotification('Product not found');
     }
 });
 
@@ -239,7 +239,7 @@ function exportJSON() {
     a.download = 'burgers.json';
     a.click();
     URL.revokeObjectURL(url);
-    showNotification('JSON exportado correctamente');
+    showNotification('JSON exported');
 }
 
 // Cierra modales al hacer clic fuera de ellos

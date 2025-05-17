@@ -32,7 +32,7 @@ async function handleLogin(event) {
             localStorage.setItem('isLoggedIn', 'true');
             
             // Redirigir a la página de inicio
-            window.location.href = 'Inicio.html';
+            window.location.href = 'index.html';
         } else {
             // No es empleado, verificar si es un cliente
             const customer = customerData.find(cust => 
@@ -48,16 +48,16 @@ async function handleLogin(event) {
                 localStorage.setItem('isLoggedIn', 'true');
                 
                 // Redirigir a la página de inicio
-                window.location.href = 'Inicio.html';
+                window.location.href = 'index.html';
             } else {
                 // No coincide con ningún usuario ni empleado
-                alert('Correo o contraseña incorrectos');
+                alert('Email or password wrong.');
                 return;
             }
         }
     } catch (error) {
-        console.error('Error de inicio de sesión:', error);
-        alert('Error al iniciar sesión. Inténtalo de nuevo.');
+        console.error('Login error:', error);
+        alert('Login error. Try again.');
     }
 }
 
@@ -86,8 +86,8 @@ function checkEmployeeStatus() {
             <div class="user-menu">
                 <button class="user-menu-button">${userName}</button>
                 <div class="dropdown-content">
-                    <a href="MyProfile.html">Mi Perfil</a>
-                    <a href="#" onclick="logout()">Cerrar Sesión</a>
+                    <a href="MyProfile.html">Mi Profile</a>
+                    <a href="#" onclick="logout()">Logout</a>
                 </div>
             </div>
         `;

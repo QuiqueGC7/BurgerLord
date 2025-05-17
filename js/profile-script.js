@@ -58,13 +58,13 @@ async function loadCustomerData(userEmail) {
                 address: customer.Customer_Address
             }));
         } else {
-            console.error('Cliente no encontrado en la base de datos');
+            console.error('User not found in database.');
             
             // Cargar datos guardados en localStorage como respaldo
             loadSavedUserData();
         }
     } catch (error) {
-        console.error('Error al cargar datos del cliente:', error);
+        console.error("Error loading user's data :", error);
         
         // Si hay un error, intentar cargar desde localStorage
         loadSavedUserData();
@@ -110,7 +110,7 @@ function setupFormSubmitHandler() {
             }
             
             // Mostrar mensaje de confirmación
-            showNotification('¡Datos guardados correctamente!');
+            showNotification('Data Saved!');
         });
     }
 }

@@ -15,7 +15,7 @@ function renderizarMenu(data) {
             currentCategory = item.categoria;
             const categoriaHeader = document.createElement('section');
             categoriaHeader.className = 'categoria';
-            categoriaHeader.textContent = `Complementos ${currentCategory}`;
+            categoriaHeader.textContent = `Complements ${currentCategory}`;
             menuContainer.appendChild(categoriaHeader);
         }
         
@@ -30,7 +30,7 @@ function renderizarMenu(data) {
             <strong>$${item.precio.toFixed(2)}</strong>
             <ol></ol>
             <button class="btn-agregar" onclick="agregarAlCarrito(${item.id})">
-                🛒 Añadir al carrito
+                🛒 BUY
             </button>
         `;
         
@@ -64,7 +64,7 @@ function agregarAlCarrito(complementosId) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     
     // Mostrar confirmación con opción de ir al carrito
-    if (confirm('Hamburguesa añadida al carrito. ¿Quieres ver tu carrito?')) {
+    if (confirm('Menu send to the list. Want to see the list??')) {
         window.location.href = 'Carrito.html';
     }
 }
@@ -83,8 +83,8 @@ function actualizarContadorCarrito() {
 
 // Cargar los datos del JSON de hamburguesas
 fetch('./json/complementos.json')
-    .then(res => {
-        if (!res.ok) throw new Error("Error de red");
+     .then(res => {
+        if (!res.ok) throw new Error("Red error");
         return res.json();
     })
     .then(data => {
@@ -95,7 +95,7 @@ fetch('./json/complementos.json')
         // Actualizar contador
         actualizarContadorCarrito();
     })
-    .catch(err => console.error("Error al cargar el menú:", err));
+    .catch(err => console.error("Error loading the menu:", err));
 
 // Actualizar el contador cuando cambie el localStorage
 window.addEventListener('storage', (e) => {

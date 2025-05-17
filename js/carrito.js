@@ -8,16 +8,16 @@ function mostrarCarrito() {
     if (carrito.length === 0) {
         container.innerHTML = `
             <div class="carrito-vacio">
-                <h2>Tu carrito está vacío</h2>
-                <p>No hay productos en tu carrito</p>
-                <a href="Carta.html" class="btn-volver">Volver a la carta</a>
+                <h2>Your list is empty</h2>
+                <p>No products in the list</p>
+                <a href="Carta.html" class="btn-volver">Back to the menu</a>
             </div>
         `;
         return;
     }
     
     let total = 0;
-    let html = '<h2>Tu Carrito</h2>';
+    let html = '<h2>Your List</h2>';
     
     carrito.forEach(item => {
         const subtotal = item.precio * item.cantidad;
@@ -45,8 +45,8 @@ function mostrarCarrito() {
     html += `
         <div class="carrito-total">
             <h3>Total: $${total.toFixed(2)}</h3>
-            <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-            <button class="btn-comprar" onclick="finalizarCompra()">Finalizar compra</button>
+            <button class="btn-vaciar" onclick="vaciarCarrito()">Delete the list</button>
+            <button class="btn-comprar" onclick="finalizarCompra()"> BUY </button>
         </div>
     `;
     
@@ -80,7 +80,7 @@ function eliminarDelCarrito(itemId) {
 
 // Función para vaciar todo el carrito
 function vaciarCarrito() {
-    if (confirm('¿Estás seguro de que quieres vaciar todo el carrito?')) {
+    if (confirm('Are you sure to empty the list?')) {
         carrito = [];
         localStorage.setItem('carrito', JSON.stringify(carrito));
         mostrarCarrito();
@@ -90,12 +90,12 @@ function vaciarCarrito() {
 // Función para finalizar la compra
 function finalizarCompra() {
     if (carrito.length === 0) {
-        alert('Tu carrito está vacío');
+        alert('Your list is empty');
         return;
     }
     
     // Aquí podrías implementar la lógica de pago
-    alert('¡Gracias por tu compra! Tu pedido está siendo procesado.');
+    alert('Thanks for buying! Your food is being prepared.');
     
     // Vaciar el carrito después de la compra
     carrito = [];
