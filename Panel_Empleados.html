@@ -9,27 +9,27 @@
 </head>
 <body>
     <header>
-        <a href="./index.html" class="home-button">🏠 Inicio</a>
-        <section class="titulo">Panel de Empleados 👨‍🍳</section>
+        <a href="./index.html" class="home-button">🏠 HomePage</a>
+        <section class="titulo">Employees Panel 👨‍🍳</section>
     </header>
 
     <div id="notification" class="notification"></div>
 
     <main>
         <div class="action-buttons">
-            <button onclick="openModal('addModal')">Añadir Producto</button>
-            <button onclick="openModal('editModal')">Editar Producto</button>
-            <button onclick="openModal('deleteModal')">Eliminar Producto</button>
+            <button onclick="openModal('addModal')">Add Product</button>
+            <button onclick="openModal('editModal')">Edit Product</button>
+            <button onclick="openModal('deleteModal')">Delete Product</button>
         </div>
 
         <table id="burgerTable">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Categoría</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
                 </tr>
             </thead>
             <tbody id="burgerTableBody"></tbody>
@@ -41,18 +41,18 @@
         <div id="addModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('addModal')">&times;</span>
-                <h2>Añadir Nuevo Producto</h2>
+                <h2>Add new product</h2>
                 <form id="addForm">
-                    <input type="text" id="addNombre" placeholder="Nombre" required>
-                    <input type="text" id="addDescripcion" placeholder="Descripción" required>
-                    <input type="number" id="addPrecio" placeholder="Precio" step="0.01" required>
+                    <input type="text" id="addNombre" placeholder="Name" required>
+                    <input type="text" id="addDescripcion" placeholder="Description" required>
+                    <input type="number" id="addPrecio" placeholder="Price" step="0.01" required>
                     <input type="text" id="addImagen" placeholder="URL de Imagen">
                     <select id="addCategoria" required>
-                        <option value="">Seleccionar Categoría</option>
+                        <option value="">Select category</option>
                         <option value="Clasicas">Clásicas</option>
                         <option value="Especiales">Especiales</option>
                     </select>
-                    <button type="submit">Añadir</button>
+                    <button type="submit">ADD</button>
                 </form>
             </div>
         </div>
@@ -60,21 +60,21 @@
         <div id="editModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('editModal')">&times;</span>
-                <h2>Editar Producto</h2>
+                <h2>Edit Product</h2>
                 <form id="editForm">
                     <select id="editProductSelect" required>
-                        <option value="">Seleccionar Producto</option>
+                        <option value="">Select Product</option>
                     </select>
-                    <input type="text" id="editNombre" placeholder="Nombre">
-                    <input type="text" id="editDescripcion" placeholder="Descripción">
-                    <input type="number" id="editPrecio" placeholder="Precio" step="0.01">
+                    <input type="text" id="editNombre" placeholder="Name">
+                    <input type="text" id="editDescripcion" placeholder="Description">
+                    <input type="number" id="editPrecio" placeholder="Price" step="0.01">
                     <input type="text" id="editImagen" placeholder="URL de Imagen">
                     <select id="editCategoria">
-                        <option value="">Seleccionar Categoría</option>
+                        <option value=""> Select Category</option>
                         <option value="Clasicas">Clásicas</option>
                         <option value="Especiales">Especiales</option>
                     </select>
-                    <button type="submit">Guardar Cambios</button>
+                    <button type="submit">Save Changes</button>
                 </form>
             </div>
         </div>
@@ -82,12 +82,12 @@
         <div id="deleteModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal('deleteModal')">&times;</span>
-                <h2>Eliminar Producto</h2>
+                <h2>Delete Product</h2>
                 <form id="deleteForm">
                     <select id="deleteProductSelect" required>
-                        <option value="">Seleccionar Producto</option>
+                        <option value="">Select Product</option>
                     </select>
-                    <button type="submit">Eliminar Producto</button>
+                    <button type="submit">Delete Product</button>
                 </form>
             </div>
         </div>
