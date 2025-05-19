@@ -1,5 +1,5 @@
-// Array para almacenar todas las hamburguesas
-let burgers = [];
+// Array para almacenar todos los productos
+let products = [];
 
 // Función abreviada para seleccionar elementos del DOM
 function $(selector) {
@@ -16,14 +16,14 @@ function showNotification(message) {
     }, 3000);
 }
 
-// Carga los datos iniciales de hamburguesas
+// Carga los datos iniciales de productos
 async function loadInitialData() {
     try {
         // Intenta cargar desde localStorage primero
-        const storedBurgers = localStorage.getItem('burgers');
+        const storedProducts = localStorage.getItem('products');
         
-        if (storedBurgers) {
-            burgers = JSON.parse(storedBurgers);
+        if (storedProducts) {
+            products = JSON.parse(storedProducts);
             console.log('Data uploaded from localStorage');
             renderTable();
             populateSelects();
@@ -31,26 +31,26 @@ async function loadInitialData() {
         }
         
         // Si no hay datos en localStorage, carga desde el archivo JSON
-        const response = await fetch('./json/burgers.json');
+        const response = await fetch('./json/Products.json');
         if (!response.ok) {
             throw new Error(`Error downloading archivo JSON: ${response.status}`);
         }
         
-        burgers = await response.json();
-        console.log('Data uploaded from burgers.json');
+        products = await response.json();
+        console.log('Data uploaded from Products.json');
         
         // Guarda en localStorage para uso futuro
-        localStorage.setItem('burgers', JSON.stringify(burgers));
+        localStorage.setItem('products', JSON.stringify(products));
         
         renderTable();
         populateSelects();
     } catch (error) {
         // Maneja errores en la carga de datos
-        console.error('Error dowloading the data:', error);
+        console.error('Error downloading the data:', error);
         showNotification('Error downloading the data.');
         
         // Iniciamos con un array vacío en caso de error
-        burgers = [];
+        products = [];
         
         // Actualiza la interfaz con el array vacío
         renderTable();
@@ -59,8 +59,8 @@ async function loadInitialData() {
 }
 
 // Guarda los cambios en localStorage y actualiza la interfaz
-function saveBurgers() {
-    localStorage.setItem('burgers', JSON.stringify(burgers));
+function saveProducts() {
+    localStorage.setItem('products', JSON.stringify(products));
     renderTable();
     populateSelects();
     showNotification('Changes saved');
@@ -69,25 +69,25 @@ function saveBurgers() {
 // Actualiza la tabla con los datos actuales
 function renderTable() {
     const tableBody = $('#burgerTableBody');
-    tableBody.innerHTML = burgers.map(burger => `
+    tableBody.innerHTML = products.map(product => `
         <tr>
-            <td>${burger.id}</td>
-            <td>${burger.nombre}</td>
-            <td>${burger.descripcion}</td>
-            <td>€${burger.precio.toFixed(2)}</td>
-            <td>${burger.categoria}</td>
+            <td>${product.id}</td>
+            <td>${product.nombre}</td>
+            <td>${product.descripcion}</td>
+            <td>€${product.precio.toFixed(2)}</td>
+            <td>${product.categoria}</td>
         </tr>
     `).join('');
 }
 
-// Actualiza los selectores desplegables con la lista de hamburguesas
+// Actualiza los selectores desplegables con la lista de productos
 function populateSelects() {
     const selects = ['#editProductSelect', '#deleteProductSelect'];
     selects.forEach(selector => {
         const select = $(selector);
         select.innerHTML = '<option value="">Select Product</option>';
-        burgers.forEach(burger => {
-            select.innerHTML += `<option value="${burger.id}">${burger.nombre}</option>`;
+        products.forEach(product => {
+            select.innerHTML += `<option value="${product.id}">${product.nombre}</option>`;
         });
     });
 }
@@ -119,22 +119,22 @@ function closeModal(modalId) {
     $(`#${modalId}`).style.display = 'none';
 }
 
-// Al seleccionar una hamburguesa para editar, carga sus datos en el formulario
+// Al seleccionar un producto para editar, carga sus datos en el formulario
 $('#editProductSelect').addEventListener('change', function() {
     const selectedId = parseInt(this.value);
     if (!selectedId) return;
     
-    const selectedBurger = burgers.find(b => b.id === selectedId);
-    if (selectedBurger) {
-        $('#editNombre').value = selectedBurger.nombre;
-        $('#editDescripcion').value = selectedBurger.descripcion;
-        $('#editPrecio').value = selectedBurger.precio;
-        $('#editImagen').value = selectedBurger.imagen;
-        $('#editCategoria').value = selectedBurger.categoria;
+    const selectedProduct = products.find(p => p.id === selectedId);
+    if (selectedProduct) {
+        $('#editNombre').value = selectedProduct.nombre;
+        $('#editDescripcion').value = selectedProduct.descripcion;
+        $('#editPrecio').value = selectedProduct.precio;
+        $('#editImagen').value = selectedProduct.imagen;
+        $('#editCategoria').value = selectedProduct.categoria;
     }
 });
 
-// Procesa el formulario para añadir hamburguesa
+// Procesa el formulario para añadir producto
 $('#addForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -148,13 +148,13 @@ $('#addForm').addEventListener('submit', function(e) {
         return;
     }
     
-    // Crea ID único para la nueva hamburguesa
-    const maxId = burgers.length > 0 
-        ? Math.max(...burgers.map(burger => burger.id)) 
+    // Crea ID único para el nuevo producto
+    const maxId = products.length > 0 
+        ? Math.max(...products.map(product => product.id)) 
         : 0;
     
-    // Crea el objeto de la nueva hamburguesa
-    const newBurger = {
+    // Crea el objeto del nuevo producto
+    const newProduct = {
         id: maxId + 1,
         nombre: nombre,
         descripcion: descripcion,
@@ -163,26 +163,26 @@ $('#addForm').addEventListener('submit', function(e) {
         categoria: $('#addCategoria').value
     };
 
-    burgers.push(newBurger);
-    saveBurgers();
+    products.push(newProduct);
+    saveProducts();
     
     $('#addForm').reset();
     closeModal('addModal');
 });
 
-// Procesa el formulario para editar hamburguesa
+// Procesa el formulario para editar producto
 $('#editForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const selectedId = parseInt($('#editProductSelect').value);
     if (!selectedId) {
-        showNotification('Please select a producto to edit.');
+        showNotification('Please select a product to edit.');
         return;
     }
     
-    const burgerIndex = burgers.findIndex(b => b.id === selectedId);
-    if (burgerIndex === -1) {
-        showNotification('Prooduct not found');
+    const productIndex = products.findIndex(p => p.id === selectedId);
+    if (productIndex === -1) {
+        showNotification('Product not found');
         return;
     }
     
@@ -193,19 +193,19 @@ $('#editForm').addEventListener('submit', function(e) {
     const imagen = $('#editImagen').value.trim();
     const categoria = $('#editCategoria').value;
     
-    if (nombre) burgers[burgerIndex].nombre = nombre;
-    if (descripcion) burgers[burgerIndex].descripcion = descripcion;
+    if (nombre) products[productIndex].nombre = nombre;
+    if (descripcion) products[productIndex].descripcion = descripcion;
     if (precioStr && !isNaN(parseFloat(precioStr))) {
-        burgers[burgerIndex].precio = parseFloat(precioStr);
+        products[productIndex].precio = parseFloat(precioStr);
     }
-    if (imagen) burgers[burgerIndex].imagen = imagen;
-    if (categoria) burgers[burgerIndex].categoria = categoria;
+    if (imagen) products[productIndex].imagen = imagen;
+    if (categoria) products[productIndex].categoria = categoria;
 
-    saveBurgers();
+    saveProducts();
     closeModal('editModal');
 });
 
-// Procesa el formulario para eliminar hamburguesa
+// Procesa el formulario para eliminar producto
 $('#deleteForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -216,27 +216,27 @@ $('#deleteForm').addEventListener('submit', function(e) {
     }
     
     // Pide confirmación antes de eliminar
-    const confirmDelete = confirm(`Sure you want to delete "${burgers.find(b => b.id === selectedId)?.nombre}"?`);
+    const confirmDelete = confirm(`Sure you want to delete "${products.find(p => p.id === selectedId)?.nombre}"?`);
     if (!confirmDelete) return;
     
-    const index = burgers.findIndex(b => b.id === selectedId);
+    const index = products.findIndex(p => p.id === selectedId);
     if (index !== -1) {
-        burgers.splice(index, 1);
-        saveBurgers();
+        products.splice(index, 1);
+        saveProducts();
         closeModal('deleteModal');
     } else {
         showNotification('Product not found');
     }
 });
 
-// Exporta los datos de hamburguesas a un archivo JSON
+// Exporta los datos de productos a un archivo JSON
 function exportJSON() {
-    const jsonStr = JSON.stringify(burgers, null, 2);
+    const jsonStr = JSON.stringify(products, null, 2);
     const blob = new Blob([jsonStr], {type: 'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'burgers.json';
+    a.download = 'Products.json';
     a.click();
     URL.revokeObjectURL(url);
     showNotification('JSON exported');
