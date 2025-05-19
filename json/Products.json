@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "nombre": "Clasic",
+    "descripcion": "Delicious hamburger with beef, lettuce, tomato and cheddar cheese.",
+    "precio": 5.99,
+    "imagen": "./Images/Clásica.png",
+    "categoria": "Clasicas"
+  },
+  {
+    "id": 2,
+    "nombre": "BBQ",
+    "descripcion": "Juicy hamburger with BBQ sauce, onion rings and crunchy bacon.",
+    "precio": 6.99,
+    "imagen": "./Images/BBQ.png",
+    "categoria": "Clasicas"
+  },
+  {
+    "id": 3,
+    "nombre": "Picapollo",
+    "descripcion": "For chicken lovers: Chicken burger, bacon, cheddar cheese, jalapeños and red chili sauce..",
+    "precio": 7.49,
+    "imagen": "./Images/Picapollo.png",
+    "categoria": "Clasicas"
+  },
+  {
+    "id": 4,
+    "nombre": "Pulled Pork",
+    "descripcion": "Tasty hamburger with poached onion, pulled pork, beef patty, cheese and bacon.",
+    "precio": 7.99,
+    "imagen": "./Images/PulledPork.png",
+    "categoria": "Clasicas"
+  },
+  {
+    "id": 5,
+    "nombre": "Gluten Free",
+    "descripcion": "Easy gluten intolerant people, here comes your burger, with beef, cheddar cheese, tomato, lettuce and caramelized onion.",
+    "precio": 6.49,
+    "imagen": "./Images/Gluten.png",
+    "categoria": "Clasicas"
+  },
+  {
+    "id": 6,
+    "nombre": "Bacon Lovers",
+    "descripcion": "Extra bacon for the real fans, irresistible!",
+    "precio": 6.99,
+    "imagen": "./Images/BaconLovers.png",
+    "categoria": "Clasicas"
+  },
+  {
+    "id": 7,
+    "nombre": "Vegan Pleasure",
+    "descripcion": "100% vegetable option with fresh and tasty ingredients.",
+    "precio": 7.49,
+    "imagen": "./Images/Vegana.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 8,
+    "nombre": "Maritime",
+    "descripcion": "The sea comes to your burger, crispy fish fillet, tomato, fresh lettuce and tartar sauce..",
+    "precio": 7.99,
+    "imagen": "./Images/Maritima.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 9,
+    "nombre": "Friedstastic",
+    "descripcion": "Fried beef burger, red bell bell pepper and feta cheese.",
+    "precio": 7.59,
+    "imagen": "./Images/FriedStatick.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 10,
+    "nombre": "Chef Alba's Burger",
+    "descripcion": "Beef hamburger with tomato jam, caramelized onion, goat log and truffle powder.",
+    "precio": 8.49,
+    "imagen": "./Images/Alba.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 11,
+    "nombre": "La Soberana",
+    "descripcion": "Doble smash patty de res, panceta crujiente y pulled pork glaseado con bourbon BBQ.",
+    "precio": 8.99,
+    "imagen": "./Images/La soberana.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 12,
+    "nombre": "Taco Burger",
+    "descripcion": "TACOBURGUER WEEEY, Taco style seasoned beef, with cheddar and Monterey Jack cheeses, crispy tortilla and homemade salsa.",
+    "precio": 8.49,
+    "imagen": "./Images/TacoBurger.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 13,
+    "nombre": "Pizzabomb",
+    "descripcion": "Explosion of flavor in pure Italian style, meat seasoned with Italian spices, mozzarella, marinara sauce and spicy oil.",
+    "precio": 8.29,
+    "imagen": "./Images/Pizzabomba.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 14,
+    "nombre": "Pepe Roni",
+    "descripcion": "With pepperoni, melted mozzarella and a spicy pizza-style touch.",
+    "precio": 7.99,
+    "imagen": "./Images/Pepperoni.png",
+    "categoria": "Especiales"
+  },
+  {
+    "id": 15,
+    "nombre": "Fries",
+    "descripcion": "Fries go with everything",
+    "precio": 1.49,
+    "imagen": "./Images/PatatasFritas.png",
+    "categoria": "Patatas"
+  },
+  {
+    "id": 16,
+    "nombre": "Deluxe fries",
+    "descripcion": "Deluxe fries, wedge style potatoes",
+    "precio": 1.49,
+    "imagen": "./Images/PatatasDeluxe.png",
+    "categoria": "Patatas"
+  },
+  {
+    "id": 17,
+    "nombre": "B&Q fries",
+    "descripcion": "Delicious potatoes with melted cheese and bacon chunks",
+    "precio": 1.95,
+    "imagen": "./Images/PatatasB&Q.png",
+    "categoria": "Patatas"
+  },
+  {
+    "id": 18,
+    "nombre": "Lemon Fanta",
+    "descripcion": "A fresh lemon fanta",
+    "precio": 2.49,
+    "imagen": "./Images/FantaLimon.png",
+    "categoria": "Bebidas"
+  },
+  {
+    "id": 19,
+    "nombre": "Orange Fanta",
+    "descripcion": "A fresh orange fanta",
+    "precio": 2.49,
+    "imagen": "./Images/FantaN.png",
+    "categoria": "Bebidas"
+  },
+  {
+    "id": 20,
+    "nombre": "CocaCola",
+    "descripcion": "A fresh CocaCola",
+    "precio": 2.49,
+    "imagen": "./Images/CocaCola.png",
+    "categoria": "Bebidas"
+  },
+  {
+    "id": 21,
+    "nombre": "Lipton",
+    "descripcion": "A good lemon tea is never a bad thing.",
+    "precio": 2.49,
+    "imagen": "./Images/Lipton.png",
+    "categoria": "Bebidas"
+  },
+  {
+    "id": 22,
+    "nombre": "Chocolate Milkshake",
+    "descripcion": "Creamy, cold and perfect with any burger, CHOCOLATEEE FLAVOUR!",
+    "precio": 3.49,
+    "imagen": "./Images/BatidoChocolate.png",
+    "categoria": "Batidos"
+  },
+  {
+    "id": 23,
+    "nombre": "Strawberry milkshake",
+    "descripcion": "Creamy, cold and perfect with any burger, CHOCOLATEEE flavor! It's pink and tastes like strawberry!",
+    "precio": 3.49,
+    "imagen": "./Images/BatidoFresa.png",
+    "categoria": "Batidos"
+  },
+  {
+    "id": 24,
+    "nombre": "Vanilla Milkshake",
+    "descripcion": "Creamy, cold and perfect with any burger, CHOCOLATEEE flavor! It's not minecraft vanilla but it's good too!",
+    "precio": 3.49,
+    "imagen": "./Images/BatidoVainilla.png",
+    "categoria": "Batidos"
+  },
+  {
+    "id": 25,
+    "nombre": "Chocolate Ice Cream",
+    "descripcion": "Just a clasic.",
+    "precio": 3.49,
+    "imagen": "./Images/HeladoChocolate.png",
+    "categoria": "Helados"
+  },
+  {
+    "id": 26,
+    "nombre": "Strawberry Ice Cream",
+    "descripcion": "It's pink and tastes like strawberry!",
+    "precio": 3.49,
+    "imagen": "./Images/GelatoFresa.png",
+    "categoria": "Helados"
+  },
+  {
+    "id": 27,
+    "nombre": "Vanilla Ice Cream",
+    "descripcion": "It doesn't matter if it's simple if it's delicious.",
+    "precio": 3.49,
+    "imagen": "./Images/GelatoVainilla.png",
+    "categoria": "Helados"
+  },
+  {
+    "id": 28,
+    "nombre": "Clasic Menu",
+    "descripcion": "Classic Burger + Fries + Choice of beverage",
+    "precio": 8.20,
+    "imagen": "./Images/MenuClásico.png",
+    "categoria": "Menu"
+  },
+  {
+    "id": 29,
+    "nombre": "Chef's election menu",
+    "descripcion": "Chef Alba's Burger + Deluxe fries + Chocolate Milkshake",
+    "precio": 10.45,
+    "imagen": "./Images/Alba_Menu.png",
+    "categoria": "Menu"
+  },
+  {
+    "id": 30,
+    "nombre": "The Hot Menu",
+    "descripcion": "Picapollo Burger + B&Q Fries + Shake of your choice",
+    "precio": 9.50,
+    "imagen": "./Images/HotMENU.png",
+    "categoria": "Menu"
+  },
+  {
+    "id": 31,
+    "nombre": "Menú LaMar",
+    "descripcion": "Maritime Burger + Fries of your choice + Beverage, Ice Cream or Milkshake of your choice",
+    "precio": 9.50,
+    "imagen": "./Images/MenuLaMar.png",
+    "categoria": "Menu"
+  },
+  {
+    "id": 32,
+    "nombre": "Frilord Menu",
+    "descripcion": "Friting Burger + Potato Fries + Drink, Ice Cream or Milkshake of your choice",
+    "precio": 9.50,
+    "imagen": "./Images/FriLordMenu.png",
+    "categoria": "Menu"
+  }
+]
