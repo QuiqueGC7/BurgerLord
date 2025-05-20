@@ -1,0 +1,80 @@
+[
+    {
+      "Customer_Name": "Andrea",
+      "Customer_Email": "andrealopez@correo.com",
+      "Customer_Phone": "600323451",
+      "Customer_Address": "123 Elm St, Austin, TX",
+      "Customer_Password": "Z5v0nS8RQ3"
+    },
+    {
+      "Customer_Name": "Carlos",
+      "Customer_Email": "carlos.mendez@correo.com",
+      "Customer_Phone": "600123456",
+      "Customer_Address": "456 Oak St, Dallas, TX",
+      "Customer_Password": "A9x7kL2TR5"
+    },
+    {
+      "Customer_Name": "Lucía",
+      "Customer_Email": "lucia.gomez@correo.com",
+      "Customer_Phone": "600654321",
+      "Customer_Address": "789 Pine St, Houston, TX",
+      "Customer_Password": "M3v2pW4QX9"
+    },
+    {
+      "Customer_Name": "Javier",
+      "Customer_Email": "javier.ramos@correo.com",
+      "Customer_Phone": "600987654",
+      "Customer_Address": "321 Maple St, San Antonio, TX",
+      "Customer_Password": "Q8t1nZ3VS2"
+    },
+    {
+      "Customer_Name": "Sofía",
+      "Customer_Email": "sofia.martinez@correo.com",
+      "Customer_Phone": "600876543",
+      "Customer_Address": "213 Cedar St, Fort Worth, TX",
+      "Customer_Password": "T4s9eK1UD7"
+    },
+    {
+      "Customer_Name": "Diego",
+      "Customer_Email": "diego.ruiz@correo.com",
+      "Customer_Phone": "600765432",
+      "Customer_Address": "147 Birch St, El Paso, TX",
+      "Customer_Password": "H1q6jM3LX4"
+    },
+    {
+      "Customer_Name": "Valentina",
+      "Customer_Email": "valentina.vera@correo.com",
+      "Customer_Phone": "600234567",
+      "Customer_Address": "852 Spruce St, Lubbock, TX",
+      "Customer_Password": "N7b3vP2KT8"
+    },
+    {
+      "Customer_Name": "Mateo",
+      "Customer_Email": "mateo.navarro@correo.com",
+      "Customer_Phone": "600345678",
+      "Customer_Address": "963 Willow St, Plano, TX",
+      "Customer_Password": "J5r2hD9MW6"
+    },
+    {
+      "Customer_Name": "Isabella",
+      "Customer_Email": "isabella.morales@correo.com",
+      "Customer_Phone": "600456789",
+      "Customer_Address": "741 Redwood St, Irving, TX",
+      "Customer_Password": "E6w8zT1RY9"
+    },
+    {
+      "Customer_Name": "Sebastián",
+      "Customer_Email": "sebastian.fernandez@correo.com",
+      "Customer_Phone": "600567890",
+      "Customer_Address": "159 Aspen St, Amarillo, TX",
+      "Customer_Password": "B2c0mX7QU5"
+    },
+    {
+      "Customer_Name": "Camila",
+      "Customer_Email": "camila.ortiz@correo.com",
+      "Customer_Phone": "600678901",
+      "Customer_Address": "357 Poplar St, Garland, TX",
+      "Customer_Password": "L4f5kV8TS1"
+    }
+  ]
+  
