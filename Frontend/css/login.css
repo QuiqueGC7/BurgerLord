@@ -1,0 +1,212 @@
+/*Creamos nueva fuente*/
+@font-face {
+    font-family: 'Lordish';
+    src: url('./Font/Lordish-Regular.ttf') format('truetype'),
+}
+
+/*Cuerpo general de la pagina*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f9f5f0; /* Cambiado a fondo crema */
+    color: #333; /* Color de texto principal */
+    line-height: 1.6;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+    display: flex; /* Habilita flexbox */
+    flex-direction: column; /* Organiza elementos en columna */
+}
+
+/*Empieza el header*/
+header {
+    background-color: #8b2801; /* Cambiado a marrón rojizo */
+    color: white;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    font-family: 'Lordish';
+    margin: 0 auto; /* Centra el título horizontalmente */
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+    line-height: 0;
+}
+
+.home-button {
+    position: absolute;
+    left: 20px;
+    background-color: #f3c507;    /* Amarillo dorado */
+    color: #8b2801;               /* Texto marrón rojizo */
+    padding: 0.3rem 0.7rem;       /* Espaciado compacto */
+    border-radius: 4px;           /* Esquinas ligeramente redondeadas */
+    text-decoration: none;        /* Elimina subrayado del link */
+    font-weight: bold;            /* Texto en negrita */
+    transition: all 0.3s ease;    /* Animación suave */
+    display: flex;                /* Contenedor flexible */
+    align-items: center;          /* Centra verticalmente el contenido */
+    gap: 5px;                     /* Espacio entre ícono y texto */
+    font-size: 16px;              /* Tamaño de fuente estándar */
+}
+
+.home-button:hover {/* Al pasar el mouse, se mueve ligeramente hacia arriba y cambia de color */
+    background-color: #ffda44;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Navegación */
+nav {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    font-size: clamp(25px, 30px, 35px);
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-right: 90px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    min-height: calc(100vh - 140px); /* Altura mínima ajustada restando header y footer */
+}
+
+.login-container {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    margin: auto; /* Centra el contenedor horizontalmente */
+}
+
+.login-container h2 {
+    color: #8b2801; /* Cambiado a marrón rojizo */
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid #f3c507; /* Añadido borde amarillo */
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #555; /* Cambiado a gris medio de la paleta */
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.form-group input:focus {
+    border-color: #f3c507; /* Cambiado a amarillo */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(243, 197, 7, 0.2);
+}
+
+/* Botón de envío */
+.btn-submit {
+    background-color: #8b2801; /* Cambiado a marrón rojizo */
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #a73201; /* Marrón más claro para hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(139, 40, 1, 0.3);
+}
+
+/* Añadido para los links */
+.form-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.form-footer p {
+    margin: 10px 0;
+}
+
+.form-footer a {
+    color: #8b2801;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/*El footer*/
+footer {
+    background-color: #333; /* Mantenido el gris oscuro */
+    color: white;
+    padding: 10px;
+    width: 100%;
+}
+@media screen and (max-width: 600px) {
+    .home-button {
+        position: static; /* Elimina posicionamiento absoluto */
+        margin: 10px auto 0; /* Margen superior e inferior, centrado horizontalmente */
+        order: 1; /* Asegura que aparezca después del título */
+    }
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos del header */
+    }
+    
+    .titulo {
+        margin-bottom: 0; /* Elimina margen inferior del título */
+    }
+}
