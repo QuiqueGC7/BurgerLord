@@ -6,37 +6,26 @@ let productsData = [];
 function renderizarMenu(data) {
     const menuContainer = document.getElementById('menu-container');
     menuContainer.innerHTML = '';
-    
-    // Filtrar solo los productos de categoría "Menu"
-    const filteredData = data.filter(item => item.categoria === "Menu");
-    
-    let currentCategory = '';
-    
+
+    // Filtrar solo los productos cuyo Product_Type_ID sea 6 (menús)
+    const filteredData = data.filter(item => item.Product_Type_ID === 6);
+
     filteredData.forEach(item => {
-        // Añadir encabezado de categoría si es diferente
-        if (item.categoria !== currentCategory) {
-            currentCategory = item.categoria;
-            const categoriaHeader = document.createElement('section');
-            categoriaHeader.className = 'categoria';
-            categoriaHeader.textContent = `Menus ${currentCategory}`;
-            menuContainer.appendChild(categoriaHeader);
-        }
-        
         // Crear tarjeta de menú
         const menuCard = document.createElement('div');
         menuCard.className = 'menu-item';
-        
+
         menuCard.innerHTML = `
-            <img src="${item.imagen}" alt="${item.nombre}" id="${item.id}">
-            <h3>${item.nombre}</h3>
-            <p>${item.descripcion}</p>
-            <strong>$${item.precio.toFixed(2)}</strong>
+            <img src="${item.Product_Photo}" alt="${item.Product_Name}" id="${item.Product_ID}">
+            <h3>${item.Product_Name}</h3>
+            <p>${item.Product_Description}</p>
+            <strong>$${item.Price.toFixed(2)}</strong>
             <ol></ol>
-            <button class="btn-agregar" onclick="agregarAlCarrito(${item.id})">
+            <button class="btn-agregar" onclick="agregarAlCarrito(${item.Product_ID})">
                 🛒 BUY
             </button>
         `;
-        
+
         menuContainer.appendChild(menuCard);
     });
 }
@@ -45,27 +34,27 @@ function renderizarMenu(data) {
 function agregarAlCarrito(productId) {
     // Obtener el carrito más reciente de localStorage
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    
+
     const itemExistente = carrito.find(item => item.id === productId);
-    
+
     if (itemExistente) {
         itemExistente.cantidad += 1;
     } else {
         // Encontrar el producto en los datos cargados
-        const product = productsData.find(p => p.id === productId);
+        const product = productsData.find(p => p.Product_ID === productId);
         if (product) {
             carrito.push({
-                id: product.id,
-                nombre: product.nombre,
-                precio: product.precio,
+                id: product.Product_ID,
+                nombre: product.Product_Name,
+                precio: product.Price,
                 cantidad: 1
             });
         }
     }
-    
+
     // Guardar en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    
+
     // Mostrar confirmación con opción de ir al carrito
     if (confirm('Menu send to the list. Want to see the list??')) {
         window.location.href = 'Carrito.html';
@@ -76,7 +65,7 @@ function agregarAlCarrito(productId) {
 function actualizarContadorCarrito() {
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
-    
+
     // Si existe un elemento contador en la página, actualizarlo
     const contador = document.getElementById('contador-carrito');
     if (contador) {
@@ -84,10 +73,10 @@ function actualizarContadorCarrito() {
     }
 }
 
-// Cargar los datos del JSON unificado
-fetch('./json/Products.json')
+// Cargar los datos desde la API
+fetch('./Controller?ACTION=PRODUCT.FIND_ALL')
     .then(res => {
-        if (!res.ok) throw new Error("Red error");
+        if (!res.ok) throw new Error("Error en la respuesta de la API");
         return res.json();
     })
     .then(data => {
@@ -98,7 +87,7 @@ fetch('./json/Products.json')
         // Actualizar contador
         actualizarContadorCarrito();
     })
-    .catch(err => console.error("Error loading the menu:", err));
+    .catch(err => console.error("Error loading the menu from API:", err));
 
 // Actualizar el contador cuando cambie el localStorage
 window.addEventListener('storage', (e) => {
