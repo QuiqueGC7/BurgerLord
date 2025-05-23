@@ -6,6 +6,22 @@
 
 /*Cuerpo general de la pagina*/
 body {
+    /* FONDO - MANTIENE TU IMAGEN ACTUAL */
+    background-image: url('../Images/pngtree-luxurious-throne-a-3d-rendering-of-a-red-royal-chair-with-image_3612120.jpg');
+    
+    /* OPCIONAL: Si quieres cambiar a la nueva imagen de pergamino, descomenta la línea de abajo y comenta la de arriba */
+    /* background-image: url('../Images/nueva-imagen-pergamino.jpg'); */
+    
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* Fallback: Color de fondo similar al pergamino por si no carga la imagen */
+    background-color: #ffffff;
+    
+    /* Efecto de textura adicional para simular pergamino */
+    position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
