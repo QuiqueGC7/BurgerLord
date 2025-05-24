@@ -217,15 +217,13 @@ INSERT INTO Locations (Street_Name, Postal_Code, City_ID) VALUES
 
 -- Insert Productos (depende de Categories)
 INSERT INTO Products (Product_Photo, Product_Name, Product_Description, Price, Product_Type_ID) VALUES
--- Burgers Clásicas (Category ID: 1)
+-- Burgers (Category ID: 1)
 ('./Images/Clásica.png', 'Clasic', 'Delicious hamburger with beef, lettuce, tomato and cheddar cheese.', 5.99, 1),
 ('./Images/BBQ.png', 'BBQ', 'Juicy hamburger with BBQ sauce, onion rings and crunchy bacon.', 6.99, 1),
 ('./Images/Picapollo.png', 'Picapollo', 'For chicken lovers: Chicken burger, bacon, cheddar cheese, jalapeños and red chili sauce.', 7.49, 1),
 ('./Images/PulledPork.png', 'Pulled Pork', 'Tasty hamburger with poached onion, pulled pork, beef patty, cheese and bacon.', 7.99, 1),
 ('./Images/Gluten.png', 'Gluten Free', 'Easy gluten intolerant people, here comes your burger, with beef, cheddar cheese, tomato, lettuce and caramelized onion.', 6.49, 1),
 ('./Images/BaconLovers.png', 'Bacon Lovers', 'Extra bacon for the real fans, irresistible!', 6.99, 1),
-
--- Burgers Especiales (Category ID: 1)
 ('./Images/Vegana.png', 'Vegan Pleasure', '100% vegetable option with fresh and tasty ingredients.', 7.49, 1),
 ('./Images/Maritima.png', 'Maritime', 'The sea comes to your burger, crispy fish fillet, tomato, fresh lettuce and tartar sauce.', 7.99, 1),
 ('./Images/FriedStatick.png', 'Friedstastic', 'Fried beef burger, red bell bell pepper and feta cheese.', 7.59, 1),
@@ -274,9 +272,9 @@ INSERT INTO Shops (Location_ID) VALUES
 -- 4. Finalmente insertar en tablas con dependencias de tercer nivel
 -- Insert Empleados (depende de Roles y Shops)
 INSERT INTO Employees (Employee_Name, Employee_SecondName, Role_ID, Shop_ID, Employee_EMail, Employee_Phone, Employee_Password) VALUES
-('Carlos', 'Pérez', 1, 1, 'carlosperez@empresa.com', '600123451', 'RRdmleR2sd'),
-('Lucía', 'Martínez', 1, 1, 'luciamartinez@empresa.com', '600123452', 'HBu1pYyajq'),
-('Alberto', 'Olleta', 1, 1, 'albertoolleta@empresa.com', '600123453', 'XUTpCIl4FQ');
+('Carlos', 'Pérez', 1, 1, 'carlosperez@empresa.com', '600123451', 'Contra1'),
+('Lucía', 'Martínez', 1, 1, 'luciamartinez@empresa.com', '600123452', 'Conta2'),
+('Alberto', 'Olleta', 1, 1, 'albertoolleta@empresa.com', '600123453', 'Contra3');
 
 -- Insert Candidatos (depende de Job_Offers)
 INSERT INTO Candidates (Candidate_Name, Candidate_SecondName, Candidate_EMail, Candidate_Phone, Candidate_CV, Job_Offer_ID) VALUES
