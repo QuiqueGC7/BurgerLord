@@ -273,7 +273,7 @@ INSERT INTO Shops (Location_ID) VALUES
 -- Insert Empleados (depende de Roles y Shops)
 INSERT INTO Employees (Employee_Name, Employee_SecondName, Role_ID, Shop_ID, Employee_EMail, Employee_Phone, Employee_Password) VALUES
 ('Carlos', 'Pérez', 1, 1, 'carlosperez@empresa.com', '600123451', 'Contra1'),
-('Lucía', 'Martínez', 1, 1, 'luciamartinez@empresa.com', '600123452', 'Conta2'),
+('Lucía', 'Martínez', 1, 1, 'luciamartinez@empresa.com', '600123452', 'Contra2'),
 ('Alberto', 'Olleta', 1, 1, 'albertoolleta@empresa.com', '600123453', 'Contra3');
 
 -- Insert Candidatos (depende de Job_Offers)
