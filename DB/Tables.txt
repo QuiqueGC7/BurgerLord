@@ -168,16 +168,16 @@ INSERT INTO Roles (Role_Name) VALUES
 
 -- Insert Clientes
 INSERT INTO Customers (Customer_Name, Customer_SecondName, Customer_Email, Customer_Phone, Customer_Address, Customer_Password) VALUES
-('Andrea', 'Lopez', 'andrealopez@correo.com', '600323451', '123 Elm St, Austin, TX', 'Z5v0nS8RQ3'),
-('Carlos', 'Ramirez', 'carlosr@correo.com', '601122334', '456 Oak St, Dallas, TX', 'T4e9kP1XZ2'),
-('Lucia', 'Martinez', 'luciam@correo.com', '602233445', '789 Pine St, Houston, TX', 'B3r8fH2KD9'),
-('Miguel', 'Torres', 'miguelt@correo.com', '603344556', '321 Maple St, San Antonio, TX', 'W1x7zU4QE8'),
-('Sofia', 'Garcia', 'sofiag@correo.com', '604455667', '654 Cedar St, El Paso, TX', 'N6y2cM3TR5'),
-('Diego', 'Fernandez', 'dfernandez@correo.com', '605566778', '987 Birch St, Lubbock, TX', 'H3k9dV7PA1'),
-('Valeria', 'Santos', 'valerias@correo.com', '606677889', '147 Spruce St, Plano, TX', 'M2q6nZ5XE4'),
-('Javier', 'Morales', 'jmorales@correo.com', '607788990', '258 Willow St, Irving, TX', 'K8j1tB6UC7'),
-('Camila', 'Ortega', 'cortega@correo.com', '608899001', '369 Ash St, Amarillo, TX', 'D9v3lW2QJ6'),
-('Luis', 'Navarro', 'lnavarro@correo.com', '609900112', '741 Poplar St, Garland, TX', 'R5p0sT8ME9');
+('Andrea', 'Lopez', 'andrealopez@correo.com', '600323451', '123 Elm St, Austin, TX', 'Seña1'),
+('Carlos', 'Ramirez', 'carlosr@correo.com', '601122334', '456 Oak St, Dallas, TX', 'Seña2'),
+('Lucia', 'Martinez', 'luciam@correo.com', '602233445', '789 Pine St, Houston, TX', 'Seña3'),
+('Miguel', 'Torres', 'miguelt@correo.com', '603344556', '321 Maple St, San Antonio, TX', 'Seña4'),
+('Sofia', 'Garcia', 'sofiag@correo.com', '604455667', '654 Cedar St, El Paso, TX', 'Seña5'),
+('Diego', 'Fernandez', 'dfernandez@correo.com', '605566778', '987 Birch St, Lubbock, TX', 'Seña6'),
+('Valeria', 'Santos', 'valerias@correo.com', '606677889', '147 Spruce St, Plano, TX', 'Seña7'),
+('Javier', 'Morales', 'jmorales@correo.com', '607788990', '258 Willow St, Irving, TX', 'Seña8'),
+('Camila', 'Ortega', 'cortega@correo.com', '608899001', '369 Ash St, Amarillo, TX', 'Seña9'),
+('Luis', 'Navarro', 'lnavarro@correo.com', '609900112', '741 Poplar St, Garland, TX', 'Seña10');
 
 
 -- Insert Métodos de pago
