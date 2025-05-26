@@ -8,6 +8,11 @@
 *, ::before, ::after { box-sizing: border-box; }
 
 body {
+    background-image: url('../Images/6672061325aa292ad571c5443c0265d8.jpg');
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -151,6 +156,11 @@ footer {
 
 /* ===== CARRITO VACÍO ===== */
 .carrito-vacio {
+    background-image: url('../Images/6672061325aa292ad571c5443c0265d8.jpg');
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 60px 20px;
     background-color: white;
     border-radius: 10px;

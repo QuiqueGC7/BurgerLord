@@ -6,6 +6,11 @@
 
 /* ========== ESTILOS GENERALES ========== */
 body {
+    background-image: url('../Images/delicado-patron-azul-claro-cuadrados_781822-442.avif');
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/*Para el tipo de letra en el texto*/
     margin: 0; 
     padding: 0;/*Elimina espacios por defecto del navegador*/
@@ -68,6 +73,11 @@ header {
 
 /* ========== NAVEGACIÓN ========== */
 .menu-principal {
+    background-image: url('../Images/delicado-patron-azul-claro-cuadrados_781822-442.avif');
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: #fff; /* Blanco */
     padding: 35px 0;
     margin: 30px auto; /*Elimina espacios por defecto del navegador*/
