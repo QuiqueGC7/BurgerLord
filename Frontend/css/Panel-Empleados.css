@@ -6,6 +6,11 @@
 
 /* ========== ESTILOS GENERALES ========== */
 body {
+    background-image: url('../Images/284c468389ce6309b4e80c354706a79b.jpg');
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0; /* Elimina espacios internos por defecto */
@@ -99,6 +104,7 @@ header {
     border: 1px solid #ddd;   /* Bordes claros para delimitar celdas */
     padding: 8px;             /* Espacio interno para no apiñar contenido */
     text-align: left;         /* Alinea texto a la izquierda para lectura */
+    background-color: #f2f2f2;
 }
 
 #burgerTable th {
@@ -119,7 +125,11 @@ header {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-image: url('../Images/estilo-redondo-suave-lapiz_78370-7571.avif');
+    background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
