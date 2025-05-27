@@ -1,6 +1,9 @@
 // Array para almacenar todos los productos
 let products = [];
 
+// URL base del controlador
+const API_BASE_URL = './Controller';
+
 // Función abreviada para seleccionar elementos del DOM
 function $(selector) {
     return document.querySelector(selector);
@@ -9,66 +12,109 @@ function $(selector) {
 // Muestra una notificación temporal al usuario
 function showNotification(message) {
     const notification = $('#notification');
-    notification.textContent = message;
-    notification.style.display = 'block';
-    setTimeout(() => {
-        notification.style.display = 'none';
-    }, 3000);
-}
-
-// Carga los datos iniciales de productos
-async function loadInitialData() {
-    try {
-        // Intenta cargar desde localStorage primero
-        const storedProducts = localStorage.getItem('products');
-        
-        if (storedProducts) {
-            products = JSON.parse(storedProducts);
-            console.log('Data uploaded from localStorage');
-            renderTable();
-            populateSelects();
-            return;
-        }
-        
-        // Si no hay datos en localStorage, carga desde el archivo JSON
-        const response = await fetch('./json/Products.json');
-        if (!response.ok) {
-            throw new Error(`Error downloading archivo JSON: ${response.status}`);
-        }
-        
-        products = await response.json();
-        console.log('Data uploaded from Products.json');
-        
-        // Guarda en localStorage para uso futuro
-        localStorage.setItem('products', JSON.stringify(products));
-        
-        renderTable();
-        populateSelects();
-    } catch (error) {
-        // Maneja errores en la carga de datos
-        console.error('Error downloading the data:', error);
-        showNotification('Error downloading the data.');
-        
-        // Iniciamos con un array vacío en caso de error
-        products = [];
-        
-        // Actualiza la interfaz con el array vacío
-        renderTable();
-        populateSelects();
+    if (notification) {
+        notification.textContent = message;
+        notification.style.display = 'block';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    } else {
+        console.log('Notification:', message);
     }
 }
 
-// Guarda los cambios en localStorage y actualiza la interfaz
-function saveProducts() {
-    localStorage.setItem('products', JSON.stringify(products));
-    renderTable();
-    populateSelects();
-    showNotification('Changes saved');
+// Función genérica para hacer peticiones a la API
+async function apiRequest(action, data = null) {
+    try {
+        let url = `${API_BASE_URL}?ACTION=PRODUCT.${action}`;
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        };
+
+        if (data) {
+            const formData = new URLSearchParams();
+            Object.keys(data).forEach(key => {
+                formData.append(key, data[key]);
+            });
+            options.body = formData.toString();
+        }
+
+        const response = await fetch(url, options);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const responseText = await response.text();
+
+        // Si la respuesta está vacía, devolver un objeto de éxito por defecto
+        if (!responseText.trim()) {
+            return { result: 1 };
+        }
+
+        // Intentar parsear como JSON
+        try {
+            return JSON.parse(responseText);
+        } catch (e) {
+            // Si no es JSON válido, devolver la respuesta como texto
+            console.log('Response is not JSON:', responseText);
+            return { result: 1, data: responseText };
+        }
+    } catch (error) {
+        console.error('API request error:', error);
+        throw error;
+    }
+}
+
+// Carga los datos iniciales de productos desde la API
+function loadInitialData() {
+    showNotification('Loading products...');
+
+    fetch(`${API_BASE_URL}?ACTION=PRODUCT.FIND_ALL`)
+        .then(res => {
+            if (!res.ok) throw new Error("Error en la respuesta de la API");
+            return res.json();
+        })
+        .then(data => {
+            // Guardar los datos mapeando los campos de la API al formato local
+            if (Array.isArray(data)) {
+                products = data.map(product => ({
+                    id: product.Product_ID,
+                    nombre: product.Product_Name,
+                    descripcion: product.Product_Description,
+                    precio: product.Price || 0,
+                    imagen: product.Product_Photo || './Images/placeholder.png',
+                    categoria: product.Product_Type_ID || 1
+                }));
+            } else {
+                products = [];
+            }
+
+            console.log('Data loaded from API:', products);
+            renderTable();
+            populateSelects();
+            showNotification('Products loaded successfully');
+        })
+        .catch(error => {
+            console.error('Error loading data:', error);
+            showNotification('Error loading data from server');
+
+            // Iniciamos con un array vacío en caso de error
+            products = [];
+            renderTable();
+            populateSelects();
+        });
 }
 
 // Actualiza la tabla con los datos actuales
 function renderTable() {
     const tableBody = $('#burgerTableBody');
+    if (!tableBody) return;
+
     tableBody.innerHTML = products.map(product => `
         <tr>
             <td>${product.id}</td>
@@ -85,6 +131,8 @@ function populateSelects() {
     const selects = ['#editProductSelect', '#deleteProductSelect'];
     selects.forEach(selector => {
         const select = $(selector);
+        if (!select) return;
+
         select.innerHTML = '<option value="">Select Product</option>';
         products.forEach(product => {
             select.innerHTML += `<option value="${product.id}">${product.nombre}</option>`;
@@ -94,8 +142,11 @@ function populateSelects() {
 
 // Abre un modal y limpia sus campos si es necesario
 function openModal(modalId) {
-    $(`#${modalId}`).style.display = 'block';
-    
+    const modal = $(`#${modalId}`);
+    if (!modal) return;
+
+    modal.style.display = 'block';
+
     // Limpia campos según el modal
     if (modalId === 'editModal') {
         $('#editNombre').value = '';
@@ -116,122 +167,198 @@ function openModal(modalId) {
 
 // Cierra un modal
 function closeModal(modalId) {
-    $(`#${modalId}`).style.display = 'none';
+    const modal = $(`#${modalId}`);
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }
 
-// Al seleccionar un producto para editar, carga sus datos en el formulario
-$('#editProductSelect').addEventListener('change', function() {
-    const selectedId = parseInt(this.value);
-    if (!selectedId) return;
-    
-    const selectedProduct = products.find(p => p.id === selectedId);
-    if (selectedProduct) {
-        $('#editNombre').value = selectedProduct.nombre;
-        $('#editDescripcion').value = selectedProduct.descripcion;
-        $('#editPrecio').value = selectedProduct.precio;
-        $('#editImagen').value = selectedProduct.imagen;
-        $('#editCategoria').value = selectedProduct.categoria;
-    }
-});
+// Configura los event listeners una vez que el DOM está cargado
+function setupEventListeners() {
+    // Al seleccionar un producto para editar, carga sus datos en el formulario
+    const editSelect = $('#editProductSelect');
+    if (editSelect) {
+        editSelect.addEventListener('change', function() {
+            const selectedId = parseInt(this.value);
+            if (!selectedId) return;
 
-// Procesa el formulario para añadir producto
-$('#addForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Validación básica
-    const nombre = $('#addNombre').value.trim();
-    const descripcion = $('#addDescripcion').value.trim();
-    const precio = parseFloat($('#addPrecio').value);
-    
-    if (!nombre || !descripcion || isNaN(precio) || precio <= 0) {
-        showNotification('Please complete all the gaps.');
-        return;
+            const selectedProduct = products.find(p => p.id === selectedId);
+            if (selectedProduct) {
+                $('#editNombre').value = selectedProduct.nombre;
+                $('#editDescripcion').value = selectedProduct.descripcion;
+                $('#editPrecio').value = selectedProduct.precio;
+                $('#editImagen').value = selectedProduct.imagen;
+                $('#editCategoria').value = selectedProduct.categoria;
+            }
+        });
     }
-    
-    // Crea ID único para el nuevo producto
-    const maxId = products.length > 0 
-        ? Math.max(...products.map(product => product.id)) 
-        : 0;
-    
-    // Crea el objeto del nuevo producto
-    const newProduct = {
-        id: maxId + 1,
-        nombre: nombre,
-        descripcion: descripcion,
-        precio: precio,
-        imagen: $('#addImagen').value.trim() || './Images/placeholder.png',
-        categoria: $('#addCategoria').value
-    };
 
-    products.push(newProduct);
-    saveProducts();
-    
-    $('#addForm').reset();
-    closeModal('addModal');
-});
+    // Procesa el formulario para añadir producto
+    const addForm = $('#addForm');
+    if (addForm) {
+        addForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-// Procesa el formulario para editar producto
-$('#editForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const selectedId = parseInt($('#editProductSelect').value);
-    if (!selectedId) {
-        showNotification('Please select a product to edit.');
-        return;
-    }
-    
-    const productIndex = products.findIndex(p => p.id === selectedId);
-    if (productIndex === -1) {
-        showNotification('Product not found');
-        return;
-    }
-    
-    // Actualiza solo los campos modificados
-    const nombre = $('#editNombre').value.trim();
-    const descripcion = $('#editDescripcion').value.trim();
-    const precioStr = $('#editPrecio').value.trim();
-    const imagen = $('#editImagen').value.trim();
-    const categoria = $('#editCategoria').value;
-    
-    if (nombre) products[productIndex].nombre = nombre;
-    if (descripcion) products[productIndex].descripcion = descripcion;
-    if (precioStr && !isNaN(parseFloat(precioStr))) {
-        products[productIndex].precio = parseFloat(precioStr);
-    }
-    if (imagen) products[productIndex].imagen = imagen;
-    if (categoria) products[productIndex].categoria = categoria;
+            // Validación básica
+            const nombre = $('#addNombre').value.trim();
+            const descripcion = $('#addDescripcion').value.trim();
+            const precio = parseFloat($('#addPrecio').value);
+            const imagen = $('#addImagen').value.trim() || './Images/placeholder.png';
+            const categoria = parseInt($('#addCategoria').value) || 1;
 
-    saveProducts();
-    closeModal('editModal');
-});
+            if (!nombre || !descripcion || isNaN(precio) || precio <= 0) {
+                showNotification('Please complete all the required fields.');
+                return;
+            }
 
-// Procesa el formulario para eliminar producto
-$('#deleteForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const selectedId = parseInt($('#deleteProductSelect').value);
-    if (!selectedId) {
-        showNotification('Select a product to delete.');
-        return;
+            try {
+                showNotification('Adding product...');
+
+                // Genera un ID único (en producción, esto debería manejarlo la base de datos)
+                const maxId = products.length > 0
+                    ? Math.max(...products.map(product => product.id))
+                    : 0;
+
+                const productData = {
+                    id_products: maxId + 1,
+                    name: nombre,
+                    description: descripcion,
+                    photo: imagen,
+                    product_type_id: categoria,
+                    price: precio
+                };
+
+                console.log('Sending product data:', productData);
+                const result = await apiRequest('CREATE', productData);
+                console.log('Create result:', result);
+
+                if (result && (result.result === 1 || result.result === '1')) {
+                    showNotification('Product added successfully');
+                    addForm.reset();
+                    closeModal('addModal');
+                    loadInitialData(); // Recarga los datos
+                } else {
+                    showNotification('Error adding product: ' + (result.error || 'Unknown error'));
+                }
+
+            } catch (error) {
+                console.error('Error adding product:', error);
+                showNotification('Error adding product: ' + error.message);
+            }
+        });
     }
-    
-    // Pide confirmación antes de eliminar
-    const confirmDelete = confirm(`Sure you want to delete "${products.find(p => p.id === selectedId)?.nombre}"?`);
-    if (!confirmDelete) return;
-    
-    const index = products.findIndex(p => p.id === selectedId);
-    if (index !== -1) {
-        products.splice(index, 1);
-        saveProducts();
-        closeModal('deleteModal');
-    } else {
-        showNotification('Product not found');
+
+    // Procesa el formulario para editar producto
+    const editForm = $('#editForm');
+    if (editForm) {
+        editForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const selectedId = parseInt($('#editProductSelect').value);
+            if (!selectedId) {
+                showNotification('Please select a product to edit.');
+                return;
+            }
+
+            const nombre = $('#editNombre').value.trim();
+            const descripcion = $('#editDescripcion').value.trim();
+            const precioStr = $('#editPrecio').value.trim();
+            const imagen = $('#editImagen').value.trim();
+            const categoria = parseInt($('#editCategoria').value);
+
+            if (!nombre || !descripcion || !precioStr || isNaN(parseFloat(precioStr))) {
+                showNotification('Please complete all the required fields.');
+                return;
+            }
+
+            try {
+                showNotification('Updating product...');
+
+                const productData = {
+                    id_products: selectedId,
+                    name: nombre,
+                    description: descripcion,
+                    photo: imagen || './Images/placeholder.png',
+                    product_type_id: categoria || 1,
+                    price: parseFloat(precioStr)
+                };
+
+                console.log('Updating product data:', productData);
+                const result = await apiRequest('UPDATE', productData);
+                console.log('Update result:', result);
+
+                if (result && (result.result === 1 || result.result === '1')) {
+                    showNotification('Product updated successfully');
+                    closeModal('editModal');
+                    loadInitialData(); // Recarga los datos
+                } else {
+                    showNotification('Error updating product: ' + (result.error || 'Unknown error'));
+                }
+
+            } catch (error) {
+                console.error('Error updating product:', error);
+                showNotification('Error updating product: ' + error.message);
+            }
+        });
     }
-});
+
+    // Procesa el formulario para eliminar producto
+    const deleteForm = $('#deleteForm');
+    if (deleteForm) {
+        deleteForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const selectedId = parseInt($('#deleteProductSelect').value);
+            if (!selectedId) {
+                showNotification('Select a product to delete.');
+                return;
+            }
+
+            const productToDelete = products.find(p => p.id === selectedId);
+            if (!productToDelete) {
+                showNotification('Product not found');
+                return;
+            }
+
+            // Pide confirmación antes de eliminar
+            const confirmDelete = confirm(`Are you sure you want to delete "${productToDelete.nombre}"?`);
+            if (!confirmDelete) return;
+
+            try {
+                showNotification('Deleting product...');
+
+                const result = await apiRequest('DELETE', { Product_ID: selectedId });
+                console.log('Delete result:', result);
+
+                if (result && (result.result === 1 || result.result === '1')) {
+                    showNotification('Product deleted successfully');
+                    closeModal('deleteModal');
+                    loadInitialData(); // Recarga los datos
+                } else {
+                    showNotification('Error deleting product: ' + (result.error || 'Unknown error'));
+                }
+
+            } catch (error) {
+                console.error('Error deleting product:', error);
+                showNotification('Error deleting product: ' + error.message);
+            }
+        });
+    }
+}
 
 // Exporta los datos de productos a un archivo JSON
 function exportJSON() {
-    const jsonStr = JSON.stringify(products, null, 2);
+    // Convierte los productos al formato de la API para exportar
+    const apiFormatProducts = products.map(product => ({
+        Product_ID: product.id,
+        Product_Name: product.nombre,
+        Product_Description: product.descripcion,
+        Price: product.precio,
+        Product_Photo: product.imagen,
+        Product_Type_ID: product.categoria
+    }));
+
+    const jsonStr = JSON.stringify(apiFormatProducts, null, 2);
     const blob = new Blob([jsonStr], {type: 'application/json'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -250,4 +377,7 @@ window.onclick = function(event) {
 };
 
 // Inicia la aplicación cuando el DOM está listo
-document.addEventListener('DOMContentLoaded', loadInitialData);
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    loadInitialData();
+});
