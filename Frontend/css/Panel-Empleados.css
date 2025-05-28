@@ -125,7 +125,7 @@ header {
 }
 
 .modal-content {
-    background-image: url('../Images/estilo-redondo-suave-lapiz_78370-7571.avif');
+    background-image: url('../Images/lapiz.png');
     background-size: cover; /* Cambiado de 'fixed' para mejor compatibilidad */
     background-position: center;
     background-repeat: no-repeat;
