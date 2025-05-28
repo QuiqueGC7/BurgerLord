@@ -1,97 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Empleados - BurgerLord</title>
-    <link rel="stylesheet" href="./css/Panel-Empleados.css">
-    <link rel="shortcut icon" href='./Images/Lord2.ico'/>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Panel de Empleados - BurgerLord</title>
+   <link rel="stylesheet" href="./css/Panel-Empleados.css">
+   <link rel="shortcut icon" href='./Images/Lord2.ico'/>
 </head>
 <body>
-    <header>
-        <a href="./index.html" class="home-button">🏠 HomePage</a>
-        <section class="titulo">Employees Panel 👨‍🍳</section>
-    </header>
+   <header>
+       <a href="./index.html" class="home-button">🏠 HomePage</a>
+       <section class="titulo">Employees Panel 👨‍🍳</section>
+   </header>
 
-    <div id="notification" class="notification"></div>
+   <div id="notification" class="notification"></div>
 
-    <main>
-        <div class="action-buttons">
-            <button onclick="openModal('addModal')">Add Product</button>
-            <button onclick="openModal('editModal')">Edit Product</button>
-            <button onclick="openModal('deleteModal')">Delete Product</button>
-        </div>
+   <main>
+       <div class="action-buttons">
+           <button onclick="openModal('addModal')">Add Product</button>
+           <button onclick="openModal('editModal')">Edit Product</button>
+           <button onclick="openModal('deleteModal')">Delete Product</button>
+       </div>
 
-        <table id="burgerTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                </tr>
-            </thead>
-            <tbody id="burgerTableBody"></tbody>
-        </table>
+       <table id="burgerTable">
+           <thead>
+               <tr>
+                   <th>ID</th>
+                   <th>Name</th>
+                   <th>Description</th>
+                   <th>Price</th>
+                   <th>Category</th>
+               </tr>
+           </thead>
+           <tbody id="burgerTableBody"></tbody>
+       </table>
 
-        <button class="export-button" onclick="exportJSON()">Exportar JSON</button>
+       <button class="export-button" onclick="exportJSON()">Exportar JSON</button>
 
-        <!-- Modals -->
-        <div id="addModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('addModal')">&times;</span>
-                <h2>Add new product</h2>
-                <form id="addForm">
-                    <input type="text" id="addNombre" placeholder="Name" required>
-                    <input type="text" id="addDescripcion" placeholder="Description" required>
-                    <input type="number" id="addPrecio" placeholder="Price" step="0.01" required>
-                    <input type="text" id="addImagen" placeholder="URL de Imagen">
-                    <select id="addCategoria" required>
-                        <option value="">Select category</option>
-                        <option value="Clasicas">Clásicas</option>
-                        <option value="Especiales">Especiales</option>
-                    </select>
-                    <button type="submit">ADD</button>
-                </form>
-            </div>
-        </div>
+       <!-- Modals -->
+       <div id="addModal" class="modal">
+           <div class="modal-content">
+               <span class="close" onclick="closeModal('addModal')">&times;</span>
+               <h2>Add new product</h2>
+               <form id="addForm">
+                   <input type="text" id="addNombre" placeholder="Name" required>
+                   <input type="text" id="addDescripcion" placeholder="Description" required>
+                   <input type="number" id="addPrecio" placeholder="Price" step="0.01" required>
+                   <input type="text" id="addImagen" placeholder="URL de Imagen">
+                   <select id="addCategoria" required>
+                       <option value="">Select category</option>
+                       <option value="Clasicas">Clásicas</option>
+                       <option value="Especiales">Especiales</option>
+                   </select>
+                   <button type="submit">ADD</button>
+               </form>
+           </div>
+       </div>
 
-        <div id="editModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('editModal')">&times;</span>
-                <h2>Edit Product</h2>
-                <form id="editForm">
-                    <select id="editProductSelect" required>
-                        <option value="">Select Product</option>
-                    </select>
-                    <input type="text" id="editNombre" placeholder="Name">
-                    <input type="text" id="editDescripcion" placeholder="Description">
-                    <input type="number" id="editPrecio" placeholder="Price" step="0.01">
-                    <input type="text" id="editImagen" placeholder="URL de Imagen">
-                    <select id="editCategoria">
-                        <option value=""> Select Category</option>
-                        <option value="Clasicas">Clásicas</option>
-                        <option value="Especiales">Especiales</option>
-                    </select>
-                    <button type="submit">Save Changes</button>
-                </form>
-            </div>
-        </div>
+       <div id="editModal" class="modal">
+           <div class="modal-content">
+               <span class="close" onclick="closeModal('editModal')">&times;</span>
+               <h2>Edit Product</h2>
+               <form id="editForm">
+                   <select id="editProductSelect" required>
+                       <option value="">Select Product</option>
+                   </select>
+                   <input type="text" id="editNombre" placeholder="Name">
+                   <input type="text" id="editDescripcion" placeholder="Description">
+                   <input type="number" id="editPrecio" placeholder="Price" step="0.01">
+                   <input type="text" id="editImagen" placeholder="URL de Imagen">
+                   <select id="editCategoria">
+                       <option value=""> Select Category</option>
+                       <option value="Clasicas">Clásicas</option>
+                       <option value="Especiales">Especiales</option>
+                   </select>
+                   <button type="submit">Save Changes</button>
+               </form>
+           </div>
+       </div>
 
-        <div id="deleteModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('deleteModal')">&times;</span>
-                <h2>Delete Product</h2>
-                <form id="deleteForm">
-                    <select id="deleteProductSelect" required>
-                        <option value="">Select Product</option>
-                    </select>
-                    <button type="submit">Delete Product</button>
-                </form>
-            </div>
-        </div>
-    </main>
-    <script src="./js/Panel-Empleados.js"></script>
+       <div id="deleteModal" class="modal">
+           <div class="modal-content">
+               <span class="close" onclick="closeModal('deleteModal')">&times;</span>
+               <h2>Delete Product</h2>
+               <form id="deleteForm">
+                   <select id="deleteProductSelect" required>
+                       <option value="">Select Product</option>
+                   </select>
+                   <button type="submit">Delete Product</button>
+               </form>
+           </div>
+       </div>
+   </main>
+   <script src="./js/Panel-Empleados.js"></script>
 </body>
 </html>
